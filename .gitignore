@@ -1,7 +1,10 @@
 # build output
 dist/
-# generated types
+.vercel/
+
+# generated types & cache
 .astro/
+.cache/
 
 # dependencies
 node_modules/
@@ -12,13 +15,18 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
+# environment variables & secrets
 .env
-.env.production
+.env.*
+!.env.example
+*.local
+tokens.json
+secrets.json
 
-# macOS-specific files
+# OS and IDE files
 .DS_Store
-
-# jetbrains setting folder
+Thumbs.db
 .idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
