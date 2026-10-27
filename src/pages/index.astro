@@ -1,16 +1,41 @@
 ---
+import '../styles/global.css';
+import { getValidatedYamalStats } from '../lib/data-validator';
+
+const stats = getValidatedYamalStats();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="fr" class="bg-[#0D0E12] text-[#F2F2F0]">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>304 — Lamine Yamal | Archive Brutaliste</title>
+  </head>
+  <body class="min-h-screen bg-[#0D0E12] text-[#F2F2F0] antialiased">
+    <main class="max-w-4xl mx-auto p-8 font-mono">
+      <header class="border-b border-[#2A2D35] pb-6 mb-8">
+        <div class="text-[#E2F163] text-xs uppercase tracking-widest mb-2">/// SYSTÈME DE DONNÉES VALIDÉ /// MOTIF 304</div>
+        <h1 class="text-4xl font-black uppercase tracking-tight">{stats.player.fullName}</h1>
+        <p class="text-sm text-gray-400 mt-1">{stats.player.neighborhood} — Dossier {stats.player.postalCodeSign}</p>
+      </header>
+
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div class="p-4 border border-[#2A2D35] bg-[#1C1E24]">
+          <div class="text-3xl font-bold text-[#E2F163]">{stats.goals.length}</div>
+          <div class="text-xs uppercase text-gray-400 mt-1">Buts Référencés</div>
+        </div>
+        <div class="p-4 border border-[#2A2D35] bg-[#1C1E24]">
+          <div class="text-3xl font-bold text-[#004D98]">{stats.trophies.length}</div>
+          <div class="text-xs uppercase text-gray-400 mt-1">Titres Majeurs</div>
+        </div>
+        <div class="p-4 border border-[#2A2D35] bg-[#1C1E24]">
+          <div class="text-3xl font-bold text-[#A50044]">{stats.records.length}</div>
+          <div class="text-xs uppercase text-gray-400 mt-1">Records de Précocité</div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,412 @@
+{
+  "player": {
+    "fullName": "Lamine Yamal Nasraoui Ebana",
+    "shortName": "Lamine Yamal",
+    "birthDate": "2007-07-13",
+    "birthPlace": "Esplugues de Llobregat, Catalogne",
+    "neighborhood": "Rocafonda, Mataró (08304)",
+    "postalCodeSign": "304",
+    "currentClub": "FC Barcelone",
+    "jerseyNumber": 19,
+    "dominantFoot": "Gauche",
+    "position": "Ailier droit"
+  },
+  "statsOverview": {
+    "totalGoals": 18,
+    "totalAssists": 23,
+    "totalMatches": 78,
+    "totalTrophies": 4,
+    "totalRecords": 7,
+    "lastUpdated": "2026-10-27"
+  },
+  "goals": [
+    {
+      "id": "goal-01-granada-first-liga",
+      "date": "2023-10-08",
+      "competition": "La Liga",
+      "season": "2023-2024",
+      "opponent": "Grenade CF",
+      "homeAway": "EXT",
+      "minute": 45,
+      "score": "1-2",
+      "finalScore": "2-2",
+      "goalType": "Pied gauche",
+      "assist": "João Félix",
+      "coordinates": {
+        "x": 96,
+        "y": 52
+      },
+      "videoId": "h-h8jR_y9z8",
+      "videoUrl": "https://www.youtube.com/watch?v=h-h8jR_y9z8",
+      "description": "Premier but en Liga à seulement 16 ans et 87 jours. À la réception d'un ballon glissé par João Félix au second poteau, il pousse le cuir au fond des filets de près pour sonner la révolte blaugrana.",
+      "importance": "Historique",
+      "tags": ["Premier but Liga", "Record de précocité", "Rocafonda"]
+    },
+    {
+      "id": "goal-02-georgia-first-spain",
+      "date": "2023-09-08",
+      "competition": "Éliminatoires Euro",
+      "season": "2023-2024",
+      "opponent": "Géorgie",
+      "homeAway": "EXT",
+      "minute": 74,
+      "score": "1-7",
+      "finalScore": "1-7",
+      "goalType": "Pied gauche",
+      "assist": "Nico Williams",
+      "coordinates": {
+        "x": 86,
+        "y": 58
+      },
+      "videoId": "X_bU94wK1s8",
+      "videoUrl": "https://www.youtube.com/watch?v=X_bU94wK1s8",
+      "description": "Pour sa toute première sélection avec la Roja senior à 16 ans et 57 jours, servi idéalement en retrait par Nico Williams, il décoche une frappe sèche du plat du pied gauche dans le petit filet opposé.",
+      "importance": "Historique",
+      "tags": ["Première sélection", "Premier but Roja", "Duo Nico-Lamine"]
+    },
+    {
+      "id": "goal-03-mallorca-curler",
+      "date": "2024-03-08",
+      "competition": "La Liga",
+      "season": "2023-2024",
+      "opponent": "RCD Majorque",
+      "homeAway": "DOM",
+      "minute": 73,
+      "score": "1-0",
+      "finalScore": "1-0",
+      "goalType": "Enroulé pied gauche",
+      "assist": "Robert Lewandowski",
+      "coordinates": {
+        "x": 82,
+        "y": 32
+      },
+      "videoId": "Q_f7mP9K2j1",
+      "videoUrl": "https://www.youtube.com/watch?v=Q_f7mP9K2j1",
+      "description": "Chef-d'œuvre pur au Stade de Montjuïc. Après un relais avec Lewandowski, Lamine fixe son défenseur à l'angle droit des 16 mètres, crochète intérieur et nettoie la lucarne opposée d'un enroulé parfait.",
+      "importance": "Décisif",
+      "tags": ["Lucarne", "Montjuïc", "Chef-d'œuvre"]
+    },
+    {
+      "id": "goal-04-france-euro-banger",
+      "date": "2024-07-09",
+      "competition": "Euro",
+      "season": "2023-2024",
+      "opponent": "France",
+      "homeAway": "NEUTRE",
+      "minute": 21,
+      "score": "1-1",
+      "finalScore": "2-1",
+      "goalType": "Frappe lointaine",
+      "assist": "Álvaro Morata",
+      "coordinates": {
+        "x": 74,
+        "y": 44
+      },
+      "videoId": "L_yA304mK88",
+      "videoUrl": "https://www.youtube.com/watch?v=L_yA304mK88",
+      "description": "Le tournant de l'Euro 2024. Demi-finale face à la France à Munich : à 25 mètres, il feinte Adrien Rabiot, arme une trajectoire téléguidée supersonique qui heurte le poteau avant de tromper Mike Maignan. Plus jeune buteur de l'histoire de l'Euro à 16 ans et 362 jours.",
+      "importance": "Historique",
+      "tags": ["Euro 2024", "Poteau rentrant", "But du tournoi", "304"]
+    },
+    {
+      "id": "goal-05-real-madrid-clasico",
+      "date": "2024-10-26",
+      "competition": "La Liga",
+      "season": "2024-2025",
+      "opponent": "Real Madrid",
+      "homeAway": "EXT",
+      "minute": 77,
+      "score": "0-3",
+      "finalScore": "0-4",
+      "goalType": "Pied droit",
+      "assist": "Raphinha",
+      "coordinates": {
+        "x": 89,
+        "y": 35
+      },
+      "videoId": "C_lA51c0304",
+      "videoUrl": "https://www.youtube.com/watch?v=C_lA51c0304",
+      "description": "Démonstration au Santiago Bernabéu. Alerté côté droit par Raphinha, Lamine contrôle et déclenche une mine instantanée du pied droit sous la transversale de Lunin. Célébration 304 face au public adverse, devenant le plus jeune buteur d'un Clásico à 17 ans et 105 jours.",
+      "importance": "Historique",
+      "tags": ["Clasico", "Bernabéu", "Pied droit", "304"]
+    },
+    {
+      "id": "goal-06-monaco-first-ucl",
+      "date": "2024-09-19",
+      "competition": "Ligue des Champions",
+      "season": "2024-2025",
+      "opponent": "AS Monaco",
+      "homeAway": "EXT",
+      "minute": 28,
+      "score": "1-1",
+      "finalScore": "2-1",
+      "goalType": "Pied gauche",
+      "assist": "Marc Casadó",
+      "coordinates": {
+        "x": 81,
+        "y": 38
+      },
+      "videoId": "M_nC19uCl88",
+      "videoUrl": "https://www.youtube.com/watch?v=M_nC19uCl88",
+      "description": "Premier but en Ligue des Champions au Stade Louis-II. Sur une diagonale millimétrée de Marc Casadó, contrôle d'exception, élimination de deux défenseurs par un crochet intérieur et frappe au ras du poteau.",
+      "importance": "Historique",
+      "tags": ["Ligue des Champions", "Premier but UCL", "Louis-II"]
+    },
+    {
+      "id": "goal-07-athletic-copa-solo",
+      "date": "2024-01-24",
+      "competition": "Coupe du Roi",
+      "season": "2023-2024",
+      "opponent": "Athletic Bilbao",
+      "homeAway": "EXT",
+      "minute": 32,
+      "score": "1-2",
+      "finalScore": "4-2",
+      "goalType": "Pied gauche",
+      "assist": "Pedri",
+      "coordinates": {
+        "x": 80,
+        "y": 36
+      },
+      "videoId": "S_aNm9y4C0p",
+      "videoUrl": "https://www.youtube.com/watch?v=S_aNm9y4C0p",
+      "description": "Numéro de soliste étourdissant dans la cathédrale de San Mamés. Parti de la ligne de touche droite, il mystifie son vis-à-vis en repiquant et trouve la faille d'une frappe rasante au premier poteau.",
+      "importance": "Spectaculaire",
+      "tags": ["San Mamés", "Coupe du Roi", "Solitaire"]
+    },
+    {
+      "id": "goal-08-girona-brace-1",
+      "date": "2024-09-15",
+      "competition": "La Liga",
+      "season": "2024-2025",
+      "opponent": "Gérone FC",
+      "homeAway": "EXT",
+      "minute": 30,
+      "score": "0-1",
+      "finalScore": "1-4",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 88,
+        "y": 46
+      },
+      "videoId": "G_r0nA30401",
+      "videoUrl": "https://www.youtube.com/watch?v=G_r0nA30401",
+      "description": "Pressing d'attaquant d'élite à Montilivi. Il subtilise le cuir dans les pieds de David López à l'entrée de la surface et punit instantanément le portier adverse d'un plat du pied imparable.",
+      "importance": "Décisif",
+      "tags": ["Derby Catalan", "Pressing", "Doublé"]
+    },
+    {
+      "id": "goal-09-girona-brace-2",
+      "date": "2024-09-15",
+      "competition": "La Liga",
+      "season": "2024-2025",
+      "opponent": "Gérone FC",
+      "homeAway": "EXT",
+      "minute": 37,
+      "score": "0-2",
+      "finalScore": "1-4",
+      "goalType": "Enroulé pied gauche",
+      "assist": "Raphinha",
+      "coordinates": {
+        "x": 82,
+        "y": 48
+      },
+      "videoId": "G_r0nA30402",
+      "videoUrl": "https://www.youtube.com/watch?v=G_r0nA30402",
+      "description": "Sept minutes après son premier but, sur un coup franc repoussé aux 18 mètres, il reprend d'une demi-volée enveloppée du pied gauche qui se loge au ras du montant opposé.",
+      "importance": "Spectaculaire",
+      "tags": ["Derby Catalan", "Doublé", "Demi-volée"]
+    },
+    {
+      "id": "goal-10-athletic-liga-curler",
+      "date": "2024-08-24",
+      "competition": "La Liga",
+      "season": "2024-2025",
+      "opponent": "Athletic Bilbao",
+      "homeAway": "DOM",
+      "minute": 24,
+      "score": "1-0",
+      "finalScore": "2-1",
+      "goalType": "Enroulé pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 79,
+        "y": 39
+      },
+      "videoId": "B_iL8a0304m",
+      "videoUrl": "https://www.youtube.com/watch?v=B_iL8a0304m",
+      "description": "Face à son acolyte Nico Williams à Montjuïc, il prend l'initiative depuis l'aile droite, contourne la défense adverse et décoche une frappe enroulée flottante qui fait exploser les tribunes catalanes.",
+      "importance": "Décisif",
+      "tags": ["Montjuïc", "Duel Nico-Lamine", "Victoire"]
+    },
+    {
+      "id": "goal-11-osasuna-supercopa",
+      "date": "2024-01-11",
+      "competition": "Supercoupe d'Espagne",
+      "season": "2023-2024",
+      "opponent": "CA Osasuna",
+      "homeAway": "NEUTRE",
+      "minute": 93,
+      "score": "2-0",
+      "finalScore": "2-0",
+      "goalType": "Pied gauche",
+      "assist": "Pedri",
+      "coordinates": {
+        "x": 90,
+        "y": 60
+      },
+      "videoId": "O_sAs9u3041",
+      "videoUrl": "https://www.youtube.com/watch?v=O_sAs9u3041",
+      "description": "Dans les arrêts de jeu de la demi-finale à Riyad. Sur un festival technique de Pedri qui élimine deux défenseurs, Lamine est servi dans la course et bat Herrera d'un tir croisé clinique.",
+      "importance": "Décisif",
+      "tags": ["Supercoupe", "Clutch", "Pedri-Yamal"]
+    }
+  ],
+  "trophies": [
+    {
+      "id": "trophy-euro-2024",
+      "title": "Champion d'Europe (UEFA Euro 2024)",
+      "competition": "UEFA Euro 2024 (Allemagne)",
+      "year": 2024,
+      "team": "Espagne",
+      "category": "Collectif",
+      "role": "Titulaire indiscutable sur l'aile droite, élu Meilleur Jeune Joueur de la compétition, co-meilleur passeur avec 4 passes décisives et auteur d'un but légendaire en demi-finale face à la France.",
+      "visual": "/images/trophies/euro-2024.svg",
+      "highlight": "Plus jeune vainqueur de l'histoire du Championnat d'Europe le lendemain de ses 17 ans."
+    },
+    {
+      "id": "trophy-kopa-2024",
+      "title": "Trophée Kopa 2024",
+      "competition": "Cérémonie du Ballon d'Or (France Football)",
+      "year": 2024,
+      "team": "FC Barcelone",
+      "category": "Individuel",
+      "role": "Élu à l'unanimité meilleur joueur U21 de la planète par le collège électoral composé des anciens lauréats du Ballon d'Or.",
+      "visual": "/images/trophies/kopa-2024.svg",
+      "highlight": "Plus jeune lauréat de l'histoire du Trophée Kopa à 17 ans et 107 jours, se classant également 8e au classement général du Ballon d'Or."
+    },
+    {
+      "id": "trophy-liga-2023",
+      "title": "Champion d'Espagne (La Liga 2022-2023)",
+      "competition": "La Liga",
+      "year": 2023,
+      "team": "FC Barcelone",
+      "category": "Collectif",
+      "role": "Intégré au groupe professionnel par Xavi Hernández à l'âge record de 15 ans et 290 jours, participant à la conquête du titre national sous les couleurs du Barça.",
+      "visual": "/images/trophies/liga-2023.svg",
+      "highlight": "Plus jeune joueur du XXIe siècle à inscrire son nom au palmarès du championnat d'Espagne."
+    },
+    {
+      "id": "trophy-euro-best-young-2024",
+      "title": "Meilleur Jeune Joueur de l'Euro 2024",
+      "competition": "UEFA Euro 2024",
+      "year": 2024,
+      "team": "Espagne",
+      "category": "Individuel",
+      "role": "Désigné par les observateurs techniques de l'UEFA au terme d'une campagne record (1 but, 4 passes décisives, 19 occasions créées).",
+      "visual": "/images/trophies/euro-young-2024.svg",
+      "highlight": "Premier joueur mineur de l'histoire à remporter cette distinction dans un tournoi majeur."
+    }
+  ],
+  "records": [
+    {
+      "id": "record-youngest-euro-scorer",
+      "title": "Plus jeune buteur de l'histoire du Championnat d'Europe",
+      "competition": "UEFA Euro",
+      "date": "2024-07-09",
+      "exactAge": {
+        "years": 16,
+        "days": 362
+      },
+      "status": "détenu",
+      "matchContext": "Espagne 2-1 France (Allianz Arena, Munich - Demi-finale)",
+      "previousHolder": "Johan Vonlanthen (18 ans et 141 jours en 2004)",
+      "description": "Frappe enroulée monumentale de 25 mètres trouvant la lucarne de Mike Maignan avec l'aide du poteau."
+    },
+    {
+      "id": "record-youngest-liga-scorer",
+      "title": "Plus jeune buteur de l'histoire de la Liga",
+      "competition": "La Liga",
+      "date": "2023-10-08",
+      "exactAge": {
+        "years": 16,
+        "days": 87
+      },
+      "status": "détenu",
+      "matchContext": "Grenade CF 2-2 FC Barcelone (Stade Nuevo Los Cármenes)",
+      "previousHolder": "Fabrice Olinga (16 ans et 98 jours en 2012)",
+      "description": "Reprise de près sur un service de João Félix brisant un record qui tenait depuis plus d'une décennie."
+    },
+    {
+      "id": "record-youngest-clasico-scorer",
+      "title": "Plus jeune buteur de l'histoire du Clásico",
+      "competition": "La Liga",
+      "date": "2024-10-26",
+      "exactAge": {
+        "years": 17,
+        "days": 105
+      },
+      "status": "détenu",
+      "matchContext": "Real Madrid 0-4 FC Barcelone (Santiago Bernabéu)",
+      "previousHolder": "Ansu Fati (17 ans et 359 jours en 2020)",
+      "description": "Missile du pied droit sous la transversale d'Andriy Lunin suivi de la célébration 304 au Bernabéu."
+    },
+    {
+      "id": "record-youngest-euro-winner",
+      "title": "Plus jeune vainqueur de l'histoire d'une finale d'Euro",
+      "competition": "UEFA Euro",
+      "date": "2024-07-14",
+      "exactAge": {
+        "years": 17,
+        "days": 1
+      },
+      "status": "détenu",
+      "matchContext": "Espagne 2-1 Angleterre (Olympiastadion, Berlin - Finale)",
+      "previousHolder": "Renato Sanches (18 ans et 328 jours en 2016)",
+      "description": "Titulaire et auteur de la passe décisive d'ouverture pour Nico Williams au lendemain de son 17e anniversaire."
+    },
+    {
+      "id": "record-youngest-spain-debut-scorer",
+      "title": "Plus jeune joueur et buteur de l'histoire de la sélection espagnole",
+      "competition": "Éliminatoires Euro",
+      "date": "2023-09-08",
+      "exactAge": {
+        "years": 16,
+        "days": 57
+      },
+      "status": "détenu",
+      "matchContext": "Géorgie 1-7 Espagne (Boris Paichadze Dinamo Arena, Tbilissi)",
+      "previousHolder": "Gavi (17 ans et 62 jours aux débuts, 17 ans et 304 jours au but)",
+      "description": "Double record de précocité battu dès sa première entrée en jeu en sélection senior."
+    },
+    {
+      "id": "record-youngest-kopa-winner",
+      "title": "Plus jeune lauréat du Trophée Kopa de l'histoire",
+      "competition": "Ballon d'Or (France Football)",
+      "date": "2024-10-28",
+      "exactAge": {
+        "years": 17,
+        "days": 107
+      },
+      "status": "détenu",
+      "matchContext": "Théâtre du Châtelet, Paris (68e Cérémonie du Ballon d'Or)",
+      "previousHolder": "Kylian Mbappé (19 ans et 348 jours en 2018)",
+      "description": "Consécration mondiale absolue en tant que meilleur jeune joueur du football international."
+    },
+    {
+      "id": "record-youngest-ucl-starter",
+      "title": "Plus jeune joueur titulaire de l'histoire de la Ligue des Champions",
+      "competition": "Ligue des Champions",
+      "date": "2023-10-04",
+      "exactAge": {
+        "years": 16,
+        "days": 83
+      },
+      "status": "détenu",
+      "matchContext": "FC Porto 0-1 FC Barcelone (Estádio do Dragão)",
+      "previousHolder": "Celestine Babayaro (16 ans et 86 jours en 1994)",
+      "description": "Titularisé sur l'aile droite à Porto en phase de groupes de la C1."
+    }
+  ]
+}
