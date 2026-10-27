@@ -1,0 +1,76 @@
+---
+import { getValidatedTrophies } from '../lib/data-validator';
+
+const trophies = getValidatedTrophies();
+---
+
+<section id="palmares" class="py-16 px-4 md:px-8 border-b border-border-bitume bg-bitume-surface relative">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header de Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+      <div>
+        <div class="flex items-center gap-2 font-mono text-xs text-chasuble mb-2">
+          <span>/// 04</span>
+          <span class="text-craie-dim">•</span>
+          <span>ARMOIRE À TROPHÉES</span>
+          <span class="text-craie-dim">•</span>
+          <span class="stamp-304 text-[10px]">PALMARÈS 304</span>
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-craie leading-none">
+          TITRES ET DISTINCTIONS MAJEURES
+        </h2>
+        <p class="mt-2 text-sm text-craie-muted max-w-xl font-sans">
+          Palmarès officiel conquis sous les couleurs du FC Barcelone et de la sélection espagnole.
+        </p>
+      </div>
+
+      <div class="bg-bitume border border-border-bitume px-4 py-2 font-mono text-xs self-start md:self-auto">
+        <span class="text-craie-dim">DISTINCTIONS MONDIALES :</span>
+        <span class="text-catalan-grana font-bold ml-2">4 TITRES OFFICIELS</span>
+      </div>
+    </div>
+
+    <!-- Grille des Trophées -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {trophies.map((trophy) => (
+        <div class="bg-bitume border-2 border-border-bitume p-6 flex flex-col justify-between hover:border-chasuble transition-all group hover:shadow-brutal-chasuble relative">
+          
+          <div>
+            <!-- En-tête : Année & Équipe -->
+            <div class="flex items-center justify-between border-b border-border-bitume pb-3 mb-4">
+              <span class="font-display text-3xl font-black text-chasuble leading-none">
+                {trophy.year}
+              </span>
+              <span class={`font-mono text-[10px] font-bold uppercase px-2 py-0.5 border ${trophy.team === 'Espagne' ? 'border-catalan-grana text-catalan-grana' : 'border-catalan-blau text-catalan-blau'}`}>
+                {trophy.team}
+              </span>
+            </div>
+
+            <!-- Titre du Trophée -->
+            <h3 class="font-display text-2xl font-black uppercase text-craie leading-tight mb-2 group-hover:text-chasuble transition-colors">
+              {trophy.title}
+            </h3>
+
+            <!-- Compétition & Catégorie -->
+            <div class="font-mono text-xs text-craie-dim mb-4">
+              {trophy.competition} • <span class="text-craie">{trophy.category}</span>
+            </div>
+
+            <!-- Rôle et Impact -->
+            <p class="text-xs text-craie-muted font-sans leading-relaxed mb-6">
+              {trophy.role}
+            </p>
+          </div>
+
+          <!-- Highlight de Précocité -->
+          {trophy.highlight && (
+            <div class="pt-3 border-t border-border-bitume text-[11px] font-mono text-chasuble">
+              ★ {trophy.highlight}
+            </div>
+          )}
+
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,132 @@
+---
+import { getPlayerProfile, getStatsOverview, getValidatedGoals } from '../lib/data-validator';
+import { calculateCurrentAge } from '../lib/utils';
+
+const player = getPlayerProfile();
+const overview = getStatsOverview();
+const goals = getValidatedGoals();
+
+const currentAge = calculateCurrentAge(player.birthDate);
+const decisiveRatio = ((overview.totalGoals + overview.totalAssists) / overview.totalMatches).toFixed(2);
+---
+
+<section class="relative pt-12 pb-16 px-4 md:px-8 border-b border-border-bitume overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <!-- Entête de Section Éditoriale -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6 font-mono text-xs text-craie-muted">
+      <div class="flex items-center gap-3">
+        <span class="stamp-304">DOSSIER 08304</span>
+        <span class="text-chasuble">/// MATARÓ — CATALOGNE</span>
+      </div>
+      <!-- Badge Dynamique Âge et Statut -->
+      <div class="inline-flex items-center gap-3 bg-asphalte border border-border-bitume px-3 py-1.5 text-xs">
+        <span class="text-chasuble font-bold uppercase">● STATUT : EN ACTIVITÉ</span>
+        <span class="text-craie-dim">|</span>
+        <span class="text-craie font-mono">
+          ÂGE ACTUEL : <strong class="text-craie font-bold">{currentAge.formatted}</strong>
+        </span>
+      </div>
+    </div>
+
+    <!-- Titre Géant Brutaliste -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
+      <div class="lg:col-span-8">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-craie-dim mb-2">
+          MANIFESTE ÉDITORIAL /// NUMÉRO 304
+        </p>
+        <h1 class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tight leading-[0.88] text-craie font-black">
+          304 — ROCAFONDA <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-chasuble to-craie">
+            TO THE WORLD
+          </span>
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-craie-muted max-w-2xl font-sans leading-relaxed border-l-2 border-chasuble pl-4">
+          De la dalle d'asphalte du quartier populaire de Rocafonda (code postal <span class="text-chasuble font-mono font-bold">08304</span>) jusqu'au toit de l'Europe. Retrouvez la trajectoire millimétrée, les coordonnées de chaque frappe et l'encyclopédie des records brisés par <strong class="text-craie font-bold">{player.fullName}</strong>.
+        </p>
+      </div>
+
+      <!-- Bloc Club & Maillot -->
+      <div class="lg:col-span-4 flex flex-col justify-end">
+        <div class="bg-asphalte border-2 border-border-bitume p-6 relative">
+          <div class="absolute -top-3 right-4 bg-catalan-blau text-craie px-2 py-0.5 font-display text-sm tracking-wider uppercase">
+            BLAUGRANA #19
+          </div>
+          <div class="font-mono text-xs text-craie-dim mb-1">PROFIL TACTIQUE</div>
+          <div class="font-headline font-bold text-xl text-craie">{player.position}</div>
+          <div class="text-xs text-craie-muted mt-1">Pied dominant : <span class="text-chasuble font-bold">{player.dominantFoot}</span></div>
+          <div class="mt-4 pt-4 border-t border-border-bitume flex items-center justify-between text-xs font-mono">
+            <span class="text-craie-muted">Club actuel :</span>
+            <span class="text-craie font-bold">{player.currentClub}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHIFFRES CLÉS GÉANTS (Brutaliste Métriques) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+      <!-- 1. Buts -->
+      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-chasuble transition-colors">
+        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
+          [01] BUTS PROS
+        </div>
+        <div class="font-display text-6xl sm:text-7xl font-black text-chasuble leading-none">
+          {overview.totalGoals}
+        </div>
+        <div class="font-mono text-xs text-craie-muted mt-3">
+          Dont <strong class="text-craie">{goals.length}</strong> buts clés analysés au Butoscope
+        </div>
+        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
+          GOL
+        </div>
+      </div>
+
+      <!-- 2. Passes Décisives -->
+      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-catalan-blau transition-colors">
+        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
+          [02] PASSES DÉCISIVES
+        </div>
+        <div class="font-display text-6xl sm:text-7xl font-black text-craie leading-none">
+          {overview.totalAssists}
+        </div>
+        <div class="font-mono text-xs text-craie-muted mt-3">
+          Co-meilleur passeur de l'Euro 2024 (4 assists)
+        </div>
+        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
+          AST
+        </div>
+      </div>
+
+      <!-- 3. Trophées Majeurs -->
+      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-catalan-grana transition-colors">
+        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
+          [03] TITRES MAJEURS
+        </div>
+        <div class="font-display text-6xl sm:text-7xl font-black text-catalan-grana leading-none">
+          0{overview.totalTrophies}
+        </div>
+        <div class="font-mono text-xs text-craie-muted mt-3">
+          Euro 2024 • Trophée Kopa • La Liga
+        </div>
+        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
+          CUP
+        </div>
+      </div>
+
+      <!-- 4. Ratio d'Impact -->
+      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-chasuble transition-colors">
+        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
+          [04] DÉCISIVITÉ / MATCH
+        </div>
+        <div class="font-display text-6xl sm:text-7xl font-black text-craie leading-none">
+          {decisiveRatio}
+        </div>
+        <div class="font-mono text-xs text-craie-muted mt-3">
+          41 actions décisives en {overview.totalMatches} apparitions
+        </div>
+        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
+          G+A
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

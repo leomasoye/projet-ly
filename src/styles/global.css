@@ -1,1 +1,110 @@
 @import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+/* ==========================================================================
+   POLICES LOCALES (RGPD & ZÉRO REQUÊTE EXTERNE)
+   ========================================================================== */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/bebas-neue.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url('/fonts/syne-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/fonts/inter.woff2') format('woff2');
+}
+
+/* ==========================================================================
+   DESIGN TOKENS TAILWIND V4 - FANZINE BRUTALISTE 304
+   ========================================================================== */
+@theme {
+  --color-bitume: #0D0E12;
+  --color-bitume-surface: #14161D;
+  --color-bitume-dark: #08080B;
+  --color-asphalte: #1C1E24;
+  --color-asphalte-light: #252830;
+  --color-border-bitume: #2A2D35;
+  --color-border-light: #3E424E;
+  --color-craie: #F2F2F0;
+  --color-craie-muted: #9E9EA4;
+  --color-craie-dim: #656770;
+  --color-catalan-blau: #004D98;
+  --color-catalan-grana: #A50044;
+  --color-chasuble: #E2F163;
+  --color-chasuble-glow: #F0FB80;
+  --color-chasuble-dark: #B5C438;
+
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-headline: 'Syne', sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --shadow-brutal-chasuble: 4px 4px 0px 0px #E2F163;
+  --shadow-brutal-blau: 4px 4px 0px 0px #004D98;
+  --shadow-brutal-grana: 4px 4px 0px 0px #A50044;
+  --shadow-brutal-craie: 4px 4px 0px 0px #F2F2F0;
+}
+
+/* ==========================================================================
+   STYLES GLOBAUX & TEXTURES ÉDITORIALES BRUTALISTES
+   ========================================================================== */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bitume);
+  color: var(--color-craie);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Texture tramée bitume subtile */
+.bg-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(42, 45, 53, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(42, 45, 53, 0.35) 1px, transparent 1px);
+}
+
+/* Stamp / Tampon officiel 304 */
+.stamp-304 {
+  display: inline-block;
+  border: 2px solid var(--color-chasuble);
+  color: var(--color-chasuble);
+  padding: 0.15rem 0.5rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+}
+
+/* Effets de survol brutaliste */
+.btn-brutal {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px 0px var(--color-chasuble);
+}
+
+.btn-brutal:active {
+  transform: translate(0px, 0px);
+  box-shadow: 0px 0px 0px 0px transparent;
+}

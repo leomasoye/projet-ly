@@ -1,0 +1,406 @@
+---
+import { getValidatedGoals } from '../lib/data-validator';
+import { formatDateFr } from '../lib/utils';
+
+const goals = getValidatedGoals();
+const initialGoal = goals[3] || goals[0]; // France Euro 2024 goal by default (le plus marquant)
+---
+
+<section id="butoscope" class="py-16 px-4 md:px-8 border-b border-border-bitume bg-bitume relative">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header de Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-2 font-mono text-xs text-chasuble mb-2">
+          <span>/// 01</span>
+          <span class="text-craie-dim">•</span>
+          <span>CARTOGRAPHIE BALISTIQUE</span>
+          <span class="text-craie-dim">•</span>
+          <span class="stamp-304 text-[10px]">BUTOSCOPE 304</span>
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-craie leading-none">
+          LE BUTOSCOPE INTERACTIF
+        </h2>
+        <p class="mt-2 text-sm text-craie-muted max-w-xl font-sans">
+          Position exacte, angle et distance de chaque réalisation de Lamine Yamal. Cliquez sur une balise du demi-terrain pour inspecter le compte-rendu tactique et déclencher le replay vidéo sécurisé.
+        </p>
+      </div>
+
+      <!-- Légende rapide -->
+      <div class="flex flex-wrap items-center gap-4 text-xs font-mono bg-asphalte border border-border-bitume px-4 py-2 self-start md:self-auto">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 bg-chasuble rounded-none border border-bitume"></span>
+          <span class="text-craie">But Historique</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 bg-catalan-blau rounded-none border border-bitume"></span>
+          <span class="text-craie">Décisif / Soliste</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 bg-catalan-grana rounded-none border border-bitume"></span>
+          <span class="text-craie">Spectaculaire</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grille Principale : Terrain (Gauche) + Fiche Détail / Vidéo (Droite) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- 1. Demi-Terrain de Football SVG / CSS (7 colonnes) -->
+      <div class="lg:col-span-7 bg-bitume-surface border-2 border-border-bitume p-4 sm:p-6 relative select-none">
+        
+        <!-- En-tête technique du terrain -->
+        <div class="flex items-center justify-between text-[11px] font-mono text-craie-dim mb-4 border-b border-border-bitume pb-2">
+          <span>ZONE D'ATTAQUE (CAMP ADVERSE)</span>
+          <span class="text-chasuble">VUE TACTIQUE 2D</span>
+          <span>CAMP DE MONTLIVET / MONTJUÏC</span>
+        </div>
+
+        <!-- Conteneur Ratio Terrain de Football (Attacking Half) -->
+        <div class="relative w-full aspect-[4/5] sm:aspect-[1/1] max-w-lg mx-auto bg-[#0a0b0e] border-2 border-craie/30 overflow-hidden shadow-inner">
+          
+          <!-- Lignes géométriques du terrain SVG -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none stroke-craie/30 stroke-[1.5]" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <!-- Pelouse : Tonte en bandes contrastées -->
+            <rect x="0" y="0" width="100" height="20" fill="#0e1017" />
+            <rect x="0" y="20" width="100" height="20" fill="#090a0d" />
+            <rect x="0" y="40" width="100" height="20" fill="#0e1017" />
+            <rect x="0" y="60" width="100" height="20" fill="#090a0d" />
+            <rect x="0" y="80" width="100" height="20" fill="#0e1017" />
+
+            <!-- Ligne de but (Haut) -->
+            <line x1="0" y1="2" x2="100" y2="2" class="stroke-craie stroke-2" />
+
+            <!-- Cage de but (extérieur) -->
+            <rect x="42" y="0" width="16" height="2" fill="#E2F163" class="stroke-chasuble stroke-2" />
+
+            <!-- Surface de but (6 mètres) -->
+            <rect x="36" y="2" width="28" height="8" fill="none" />
+
+            <!-- Surface de réparation (16.50 mètres) -->
+            <rect x="20" y="2" width="60" height="26" fill="none" />
+
+            <!-- Point de penalty (11 mètres) -->
+            <circle cx="50" cy="18" r="0.8" fill="#F2F2F0" />
+
+            <!-- Arc de cercle de surface -->
+            <path d="M 38 28 A 12 12 0 0 0 62 28" fill="none" />
+
+            <!-- Ligne médiane (Bas) -->
+            <line x1="0" y1="98" x2="100" y2="98" class="stroke-craie/40 stroke-2" />
+
+            <!-- Rond central (demi-cercle) -->
+            <path d="M 32 98 A 18 18 0 0 1 68 98" fill="none" />
+            <circle cx="50" cy="98" r="1" fill="#F2F2F0" />
+          </svg>
+
+          <!-- Watermark central du terrain -->
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+            <span class="font-display text-8xl font-black text-craie">304</span>
+          </div>
+
+          <!-- Points / Balises Cliquables de chaque But -->
+          <div id="pitch-pins-container" class="absolute inset-0">
+            {goals.map((goal) => {
+              // Mapping des coordonnées relatives :
+              // Dans nos données :
+              // x = pourcentage de progression vers le but adverse (50 = milieu, 100 = ligne de but)
+              // y = pourcentage de largeur (0 = gauche, 50 = centre, 100 = droite)
+              // Sur le terrain SVG orienté avec le but en HAUT (y_svg = 2) :
+              // Le but est à top: 2%, le milieu à top: 98%.
+              const topPos = Math.max(3, Math.min(95, 100 - (goal.coordinates.x - 45) * 1.8));
+              const leftPos = Math.max(5, Math.min(95, goal.coordinates.y));
+
+              const isInitial = goal.id === initialGoal.id;
+              const colorBg = 
+                goal.importance === 'Historique' ? 'bg-chasuble text-bitume border-chasuble' :
+                goal.importance === 'Décisif' ? 'bg-catalan-blau text-craie border-catalan-blau' :
+                'bg-catalan-grana text-craie border-catalan-grana';
+
+              return (
+                <button
+                  type="button"
+                  data-goal-id={goal.id}
+                  class={`pitch-pin absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center font-mono font-bold text-[11px] border-2 cursor-pointer transition-all duration-150 z-20 ${colorBg} ${isInitial ? 'ring-4 ring-chasuble scale-125 z-30' : 'hover:scale-125 hover:z-30 hover:ring-2 hover:ring-craie'}`}
+                  style={`top: ${topPos}%; left: ${leftPos}%;`}
+                  title={`${goal.opponent} (${goal.minute}') — ${goal.competition}`}
+                  aria-label={`But contre ${goal.opponent} à la ${goal.minute}e minute`}
+                >
+                  <span class="leading-none">{goal.minute}'</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <!-- Indication de Sens de Jeu -->
+          <div class="absolute bottom-2 left-4 text-[9px] font-mono text-craie-dim flex items-center gap-1 pointer-events-none">
+            <span>▲ SENS D'ATTAQUE DU BARÇA / ESPAGNE</span>
+          </div>
+        </div>
+
+        <!-- Sélecteur rapide sous le terrain pour mobile / tablette -->
+        <div class="mt-4 pt-4 border-t border-border-bitume">
+          <div class="text-[11px] font-mono text-craie-dim mb-2 uppercase">
+            SÉLECTION RAPIDE DES 11 BUTS DE L'ARCHIVE :
+          </div>
+          <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
+            {goals.map((g) => (
+              <button
+                type="button"
+                data-goal-select={g.id}
+                class="goal-pill-btn shrink-0 px-2.5 py-1 text-xs font-mono border border-border-bitume bg-asphalte text-craie hover:border-chasuble hover:text-chasuble transition-colors"
+              >
+                {g.opponent} ({g.minute}')
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Fiche Détaillée & Façade Vidéo Sécurisée (5 colonnes) -->
+      <div class="lg:col-span-5 bg-asphalte border-2 border-border-bitume p-6 flex flex-col justify-between min-h-[520px]">
+        
+        <div>
+          <!-- Badge d'importance & Match Context -->
+          <div class="flex items-center justify-between gap-2 border-b border-border-bitume pb-3 mb-4">
+            <span id="detail-importance" class="stamp-304 text-xs">
+              {initialGoal.importance.toUpperCase()}
+            </span>
+            <span id="detail-competition" class="font-mono text-xs text-chasuble font-bold uppercase">
+              {initialGoal.competition} • {initialGoal.season}
+            </span>
+          </div>
+
+          <!-- Titre du But / Adversaire -->
+          <div class="mb-4">
+            <div class="font-mono text-xs text-craie-dim mb-1" id="detail-date">
+              {formatDateFr(initialGoal.date)} ({initialGoal.homeAway})
+            </div>
+            <h3 id="detail-opponent" class="font-display text-4xl sm:text-5xl font-black uppercase text-craie leading-none">
+              VS {initialGoal.opponent}
+            </h3>
+          </div>
+
+          <!-- Métriques Clés du But -->
+          <div class="grid grid-cols-3 gap-2 my-4 font-mono text-center">
+            <div class="border border-border-bitume p-2 bg-bitume">
+              <div class="text-[10px] text-craie-dim uppercase">MINUTE</div>
+              <div id="detail-minute" class="text-xl font-bold text-chasuble font-display">{initialGoal.minute}'</div>
+            </div>
+            <div class="border border-border-bitume p-2 bg-bitume">
+              <div class="text-[10px] text-craie-dim uppercase">SCORE</div>
+              <div id="detail-score" class="text-xl font-bold text-craie font-display">{initialGoal.score}</div>
+            </div>
+            <div class="border border-border-bitume p-2 bg-bitume">
+              <div class="text-[10px] text-craie-dim uppercase">FINAL</div>
+              <div id="detail-final" class="text-xl font-bold text-craie font-display">{initialGoal.finalScore}</div>
+            </div>
+          </div>
+
+          <!-- Fiche Technique : Type de But & Passeur -->
+          <div class="space-y-2 text-xs font-mono mb-4 bg-bitume p-3 border border-border-bitume">
+            <div class="flex items-center justify-between">
+              <span class="text-craie-dim">TYPE DE FRAPPE :</span>
+              <span id="detail-type" class="text-craie font-bold">{initialGoal.goalType}</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-craie-dim">PASSEUR DÉCISIF :</span>
+              <span id="detail-assist" class="text-chasuble font-bold">{initialGoal.assist || 'Action individuelle'}</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-craie-dim">COORDONNÉES TACTIQUES :</span>
+              <span id="detail-coords" class="text-craie-dim">X: {initialGoal.coordinates.x}m / Y: {initialGoal.coordinates.y}m</span>
+            </div>
+          </div>
+
+          <!-- Description Tactique -->
+          <p id="detail-description" class="text-xs sm:text-sm text-craie-muted font-sans leading-relaxed border-l-2 border-catalan-blau pl-3 mb-6">
+            {initialGoal.description}
+          </p>
+        </div>
+
+        <!-- FAÇADE VIDÉO STATIQUE SÉCURISÉE (Zero iframe au chargement) -->
+        <div class="mt-4 pt-4 border-t border-border-bitume">
+          <div class="text-[11px] font-mono text-craie-dim mb-2 flex items-center justify-between">
+            <span>EXTRAIT VIDÉO DU BUT</span>
+            <span class="text-chasuble font-bold">● LECTEUR SÉCURISÉ</span>
+          </div>
+
+          <!-- Lecteur / Conteneur Façade Dynamique -->
+          <div id="video-wrapper" class="relative w-full aspect-video bg-bitume border-2 border-border-bitume flex flex-col items-center justify-center overflow-hidden">
+            
+            <!-- Façade Statique (Bouton de Déclenchement) -->
+            <div id="video-facade" class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-bitume hover:bg-asphalte transition-colors cursor-pointer group">
+              <!-- Fond tramé -->
+              <div class="absolute inset-0 opacity-10 bg-grid-pattern pointer-events-none"></div>
+
+              <!-- Icône Play Brutaliste -->
+              <div class="w-14 h-14 bg-chasuble text-bitume flex items-center justify-center border-2 border-bitume shadow-brutal-chasuble group-hover:scale-110 group-hover:bg-craie transition-transform mb-3">
+                <svg class="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+
+              <span class="font-display text-lg tracking-wider text-craie uppercase font-bold group-hover:text-chasuble">
+                CHARGER LA VIDÉO DU BUT
+              </span>
+              <span class="font-mono text-[10px] text-craie-dim mt-1">
+                Sandboxing strict • 0 cookie tiers avant clic
+              </span>
+            </div>
+
+            <!-- Conteneur Iframe (injecté uniquement à la demande) -->
+            <div id="video-embed-container" class="hidden w-full h-full"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Données JSON sérialisées pour la réactivité sans appel réseau client -->
+<script id="goals-raw-data" type="application/json" set:html={JSON.stringify(goals)} />
+
+<script>
+  // Logique interactive client ultra-légère (Vanilla JS pur, 0 librairie)
+  document.addEventListener('DOMContentLoaded', () => {
+    const rawDataEl = document.getElementById('goals-raw-data');
+    if (!rawDataEl) return;
+
+    interface GoalItem {
+      id: string;
+      opponent: string;
+      competition: string;
+      season: string;
+      date: string;
+      homeAway: string;
+      minute: number;
+      score: string;
+      finalScore: string;
+      goalType: string;
+      assist: string | null;
+      coordinates: { x: number; y: number };
+      videoId: string;
+      videoUrl: string;
+      description: string;
+      importance: string;
+      tags: string[];
+    }
+
+    const allGoals: GoalItem[] = JSON.parse(rawDataEl.textContent || '[]');
+    let currentGoal = allGoals[3] || allGoals[0];
+
+    // Éléments du DOM
+    const detailImportance = document.getElementById('detail-importance');
+    const detailCompetition = document.getElementById('detail-competition');
+    const detailDate = document.getElementById('detail-date');
+    const detailOpponent = document.getElementById('detail-opponent');
+    const detailMinute = document.getElementById('detail-minute');
+    const detailScore = document.getElementById('detail-score');
+    const detailFinal = document.getElementById('detail-final');
+    const detailType = document.getElementById('detail-type');
+    const detailAssist = document.getElementById('detail-assist');
+    const detailCoords = document.getElementById('detail-coords');
+    const detailDescription = document.getElementById('detail-description');
+    
+    const videoFacade = document.getElementById('video-facade');
+    const videoEmbedContainer = document.getElementById('video-embed-container');
+    const pitchPins = document.querySelectorAll<HTMLButtonElement>('.pitch-pin');
+    const pillButtons = document.querySelectorAll<HTMLButtonElement>('.goal-pill-btn');
+
+    // Met à jour la fiche textuelle et réinitialise la façade vidéo
+    function selectGoal(goal: GoalItem) {
+      currentGoal = goal;
+
+      if (detailImportance) detailImportance.textContent = goal.importance.toUpperCase();
+      if (detailCompetition) detailCompetition.textContent = `${goal.competition} • ${goal.season}`;
+      if (detailDate) detailDate.textContent = `${goal.date} (${goal.homeAway})`;
+      if (detailOpponent) detailOpponent.textContent = `VS ${goal.opponent}`;
+      if (detailMinute) detailMinute.textContent = `${goal.minute}'`;
+      if (detailScore) detailScore.textContent = goal.score;
+      if (detailFinal) detailFinal.textContent = goal.finalScore;
+      if (detailType) detailType.textContent = goal.goalType;
+      if (detailAssist) detailAssist.textContent = goal.assist || 'Action individuelle';
+      if (detailCoords) detailCoords.textContent = `X: ${goal.coordinates.x}m / Y: ${goal.coordinates.y}m`;
+      if (detailDescription) detailDescription.textContent = goal.description;
+
+      // Réinitialiser le lecteur vidéo vers la façade (évite le streaming fantôme)
+      if (videoFacade && videoEmbedContainer) {
+        videoEmbedContainer.innerHTML = '';
+        videoEmbedContainer.classList.add('hidden');
+        videoFacade.classList.remove('hidden');
+      }
+
+      // Mettre à jour l'anneau actif sur le terrain
+      pitchPins.forEach((pin) => {
+        if (pin.dataset.goalId === goal.id) {
+          pin.classList.add('ring-4', 'ring-chasuble', 'scale-125', 'z-30');
+        } else {
+          pin.classList.remove('ring-4', 'ring-chasuble', 'scale-125', 'z-30');
+        }
+      });
+
+      // Mettre à jour les pilules rapides
+      pillButtons.forEach((btn) => {
+        if (btn.dataset.goalSelect === goal.id) {
+          btn.classList.add('border-chasuble', 'text-chasuble', 'bg-bitume');
+          btn.classList.remove('bg-asphalte');
+        } else {
+          btn.classList.remove('border-chasuble', 'text-chasuble', 'bg-bitume');
+          btn.classList.add('bg-asphalte');
+        }
+      });
+    }
+
+    // Clic sur une balise du terrain
+    pitchPins.forEach((pin) => {
+      pin.addEventListener('click', () => {
+        const goalId = pin.dataset.goalId;
+        const target = allGoals.find((g) => g.id === goalId);
+        if (target) selectGoal(target);
+      });
+    });
+
+    // Clic sur une pilule de sélection rapide
+    pillButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const goalId = btn.dataset.goalSelect;
+        const target = allGoals.find((g) => g.id === goalId);
+        if (target) selectGoal(target);
+      });
+    });
+
+    // Clic sur la Façade Vidéo : injecte l'iframe sandboxée
+    if (videoFacade && videoEmbedContainer) {
+      videoFacade.addEventListener('click', () => {
+        videoFacade.classList.add('hidden');
+        videoEmbedContainer.classList.remove('hidden');
+
+        // Création dynamique de l'iframe avec attributs de sécurité stricts
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${encodeURIComponent(currentGoal.videoId)}?autoplay=1&rel=0`);
+        iframe.setAttribute('title', `Lamine Yamal vs ${currentGoal.opponent}`);
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
+        iframe.setAttribute('loading', 'lazy');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.className = 'w-full h-full border border-border-bitume';
+
+        videoEmbedContainer.innerHTML = '';
+        videoEmbedContainer.appendChild(iframe);
+      });
+    }
+
+    // Écouteur global pour sélection externe (depuis la liste complète des buts)
+    window.addEventListener('select-goal', ((event: CustomEvent<{ goalId: string }>) => {
+      const target = allGoals.find((g) => g.id === event.detail.goalId);
+      if (target) {
+        selectGoal(target);
+        document.getElementById('butoscope')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }) as EventListener);
+  });
+</script>

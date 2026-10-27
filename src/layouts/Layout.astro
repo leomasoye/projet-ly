@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "LAMINE YAMAL (304) — Archive Fanzine Brutaliste & Butoscope",
+  description = "De Rocafonda à l'Europe : Butoscope interactif, records de précocité, palmarès et statistiques officielles de Lamine Yamal (08304).",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://projet-ly.vercel.app');
+---
+
+<!doctype html>
+<html lang="fr" class="bg-bitume text-craie scroll-smooth selection:bg-chasuble selection:text-bitume">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primaire -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0D0E12" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Préchargement des polices locales pour un LCP immédiat -->
+    <link rel="preload" href="/fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/syne-bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Données structurées JSON-LD pour le SEO -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SportsPerson",
+      "name": "Lamine Yamal Nasraoui Ebana",
+      "alternateName": "Lamine Yamal",
+      "birthDate": "2007-07-13",
+      "birthPlace": "Esplugues de Llobregat, Catalogne, Espagne",
+      "nationality": "Espagnole",
+      "affiliation": [
+        {
+          "@type": "SportsTeam",
+          "name": "FC Barcelone"
+        },
+        {
+          "@type": "SportsTeam",
+          "name": "Équipe d'Espagne de football"
+        }
+      ],
+      "sport": "Football",
+      "jobTitle": "Ailier droit (Inverted Winger)",
+      "award": ["UEFA Euro 2024", "Trophée Kopa 2024", "La Liga 2022-2023"]
+    })} />
+  </head>
+  <body class="min-h-screen bg-bitume text-craie font-sans antialiased bg-grid-pattern relative flex flex-col justify-between overflow-x-hidden">
+    <!-- Filigrane géant 304 en arrière-plan -->
+    <div 
+      class="fixed inset-0 pointer-events-none select-none flex items-center justify-center opacity-[0.025] z-0 overflow-hidden font-display text-[45vw] leading-none text-craie font-black"
+      aria-hidden="true"
+    >
+      304
+    </div>
+
+    <div class="relative z-10 flex flex-col flex-1">
+      <slot />
+    </div>
+
+    <!-- Pied de page brutaliste -->
+    <footer class="relative z-10 border-t border-border-bitume bg-bitume-surface mt-24 py-8 px-4 text-xs font-mono">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="stamp-304 text-xs">ROCAFONDA 08304</span>
+          <span class="text-craie-muted">Fanzine éditorial non officiel dédié au prodige Lamine Yamal.</span>
+        </div>
+        <div class="flex items-center gap-6 text-craie-dim">
+          <span>100% SSG ASTRO</span>
+          <span>•</span>
+          <span class="text-chasuble">0 REQUÊTE CLIENT</span>
+          <span>•</span>
+          <span>LICENCE LIBRE</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

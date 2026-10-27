@@ -1,0 +1,268 @@
+---
+import { getValidatedGoals } from '../lib/data-validator';
+import { formatDateFr } from '../lib/utils';
+
+const goals = getValidatedGoals();
+
+// Extraire les options uniques pour les filtres
+const competitions = Array.from(new Set(goals.map((g) => g.competition)));
+const seasons = Array.from(new Set(goals.map((g) => g.season)));
+---
+
+<section id="buts" class="py-16 px-4 md:px-8 border-b border-border-bitume bg-bitume relative">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header de Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-2 font-mono text-xs text-chasuble mb-2">
+          <span>/// 03</span>
+          <span class="text-craie-dim">•</span>
+          <span>REGISTRE OFFICIEL</span>
+          <span class="text-craie-dim">•</span>
+          <span class="stamp-304 text-[10px]">INDEX DES BUTS</span>
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-craie leading-none">
+          CHRONOLOGIE COMPLÈTE DES BUTS
+        </h2>
+        <p class="mt-2 text-sm text-craie-muted max-w-xl font-sans">
+          Filtrez les réalisations par compétition ou par saison. Cliquez sur « Visualiser au Butoscope » pour pointer la trajectoire exacte sur la vue tactique.
+        </p>
+      </div>
+
+      <!-- Compteur dynamique de résultats -->
+      <div class="bg-asphalte border border-border-bitume px-4 py-2 font-mono text-xs self-start md:self-auto">
+        <span class="text-craie-dim">BUTS AFFICHÉS :</span>
+        <span id="filtered-count" class="text-chasuble font-bold ml-2">{goals.length}</span> / {goals.length}
+      </div>
+    </div>
+
+    <!-- Barre de Filtres 100% Client-Side Vanilla -->
+    <div class="bg-bitume-surface border-2 border-border-bitume p-4 mb-8">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        
+        <!-- Filtre Compétition -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-mono text-xs text-craie-dim uppercase mr-2">COMPÉTITION :</span>
+          <button
+            type="button"
+            data-filter-competition="all"
+            class="filter-comp-btn px-3 py-1 text-xs font-mono border border-chasuble bg-chasuble text-bitume font-bold uppercase transition-colors"
+          >
+            TOUTES
+          </button>
+          {competitions.map((comp) => (
+            <button
+              type="button"
+              data-filter-competition={comp}
+              class="filter-comp-btn px-3 py-1 text-xs font-mono border border-border-bitume bg-bitume text-craie hover:border-chasuble hover:text-chasuble uppercase transition-colors"
+            >
+              {comp}
+            </button>
+          ))}
+        </div>
+
+        <!-- Filtre Saison -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-mono text-xs text-craie-dim uppercase mr-2">SAISON :</span>
+          <button
+            type="button"
+            data-filter-season="all"
+            class="filter-season-btn px-3 py-1 text-xs font-mono border border-chasuble bg-chasuble text-bitume font-bold uppercase transition-colors"
+          >
+            TOUTES
+          </button>
+          {seasons.map((s) => (
+            <button
+              type="button"
+              data-filter-season={s}
+              class="filter-season-btn px-3 py-1 text-xs font-mono border border-border-bitume bg-bitume text-craie hover:border-chasuble hover:text-chasuble uppercase transition-colors"
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Grille des Cartes de Buts -->
+    <div id="goals-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {goals.map((goal) => {
+        const badgeColor = 
+          goal.importance === 'Historique' ? 'bg-chasuble text-bitume' :
+          goal.importance === 'Décisif' ? 'bg-catalan-blau text-craie' :
+          'bg-catalan-grana text-craie';
+
+        return (
+          <article 
+            class="goal-card bg-asphalte border-2 border-border-bitume p-6 flex flex-col justify-between hover:border-chasuble transition-all group"
+            data-competition={goal.competition}
+            data-season={goal.season}
+            data-goal-id={goal.id}
+          >
+            <div>
+              <!-- En-tête de carte -->
+              <div class="flex items-center justify-between gap-2 border-b border-border-bitume pb-3 mb-4">
+                <span class={`font-mono text-[11px] font-black uppercase px-2 py-0.5 tracking-wider ${badgeColor}`}>
+                  {goal.importance}
+                </span>
+                <span class="font-mono text-xs text-craie-muted uppercase">
+                  {formatDateFr(goal.date)}
+                </span>
+              </div>
+
+              <!-- Titre du match -->
+              <div class="mb-3">
+                <div class="font-mono text-xs text-chasuble mb-1">
+                  {goal.competition} • {goal.season} ({goal.homeAway})
+                </div>
+                <h3 class="font-display text-3xl font-black uppercase text-craie group-hover:text-chasuble transition-colors">
+                  VS {goal.opponent}
+                </h3>
+              </div>
+
+              <!-- Métriques minute & score -->
+              <div class="flex items-center gap-4 bg-bitume p-3 border border-border-bitume my-4 font-mono text-xs">
+                <div>
+                  <span class="text-craie-dim">MINUTE :</span>
+                  <span class="text-chasuble font-bold ml-1 text-sm font-display">{goal.minute}'</span>
+                </div>
+                <div class="text-border-bitume">|</div>
+                <div>
+                  <span class="text-craie-dim">SCORE :</span>
+                  <span class="text-craie font-bold ml-1">{goal.score}</span>
+                </div>
+                <div class="text-border-bitume">|</div>
+                <div>
+                  <span class="text-craie-dim">FINAL :</span>
+                  <span class="text-craie font-bold ml-1">{goal.finalScore}</span>
+                </div>
+              </div>
+
+              <!-- Fiche Geste & Passeur -->
+              <div class="space-y-1 text-xs font-mono mb-4 text-craie-muted">
+                <div>
+                  <span class="text-craie-dim">GESTE :</span>
+                  <span class="text-craie font-bold ml-1">{goal.goalType}</span>
+                </div>
+                <div>
+                  <span class="text-craie-dim">PASSEUR :</span>
+                  <span class="text-chasuble font-bold ml-1">{goal.assist || 'Action individuelle'}</span>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-xs text-craie-muted font-sans leading-relaxed mb-6 line-clamp-3">
+                {goal.description}
+              </p>
+            </div>
+
+            <!-- Actions : Bouton Vers Butoscope -->
+            <div class="pt-4 border-t border-border-bitume flex items-center justify-between gap-2">
+              <button
+                type="button"
+                data-trigger-goal={goal.id}
+                class="trigger-butoscope-btn w-full btn-brutal bg-bitume border border-border-bitume hover:border-chasuble hover:bg-chasuble hover:text-bitume py-2.5 px-4 font-mono text-xs uppercase tracking-wider font-bold transition-all text-center flex items-center justify-center gap-2"
+              >
+                <span>VISUALISER AU BUTOSCOPE</span>
+                <span class="text-chasuble group-hover:text-bitume">▲</span>
+              </button>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Message aucun résultat -->
+    <div id="no-results" class="hidden bg-asphalte border-2 border-border-bitume p-8 text-center my-8">
+      <div class="stamp-304 mb-3">AUCUN RÉSULTAT</div>
+      <p class="font-mono text-sm text-craie-muted">
+        Aucun but ne correspond aux filtres sélectionnés. Réinitialisez vos critères.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let activeComp = 'all';
+    let activeSeason = 'all';
+
+    const compButtons = document.querySelectorAll<HTMLButtonElement>('.filter-comp-btn');
+    const seasonButtons = document.querySelectorAll<HTMLButtonElement>('.filter-season-btn');
+    const cards = document.querySelectorAll<HTMLElement>('.goal-card');
+    const counterEl = document.getElementById('filtered-count');
+    const noResultsEl = document.getElementById('no-results');
+    const triggerButtons = document.querySelectorAll<HTMLButtonElement>('.trigger-butoscope-btn');
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const cardComp = card.dataset.competition;
+        const cardSeason = card.dataset.season;
+
+        const matchComp = activeComp === 'all' || cardComp === activeComp;
+        const matchSeason = activeSeason === 'all' || cardSeason === activeSeason;
+
+        if (matchComp && matchSeason) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (counterEl) counterEl.textContent = visibleCount.toString();
+      if (noResultsEl) {
+        if (visibleCount === 0) {
+          noResultsEl.classList.remove('hidden');
+        } else {
+          noResultsEl.classList.add('hidden');
+        }
+      }
+    }
+
+    // Gestion du filtre Compétition
+    compButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        compButtons.forEach((b) => {
+          b.classList.remove('bg-chasuble', 'text-bitume', 'border-chasuble', 'font-bold');
+          b.classList.add('bg-bitume', 'text-craie', 'border-border-bitume');
+        });
+        btn.classList.add('bg-chasuble', 'text-bitume', 'border-chasuble', 'font-bold');
+        btn.classList.remove('bg-bitume', 'text-craie', 'border-border-bitume');
+
+        activeComp = btn.dataset.filterCompetition || 'all';
+        applyFilters();
+      });
+    });
+
+    // Gestion du filtre Saison
+    seasonButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        seasonButtons.forEach((b) => {
+          b.classList.remove('bg-chasuble', 'text-bitume', 'border-chasuble', 'font-bold');
+          b.classList.add('bg-bitume', 'text-craie', 'border-border-bitume');
+        });
+        btn.classList.add('bg-chasuble', 'text-bitume', 'border-chasuble', 'font-bold');
+        btn.classList.remove('bg-bitume', 'text-craie', 'border-border-bitume');
+
+        activeSeason = btn.dataset.filterSeason || 'all';
+        applyFilters();
+      });
+    });
+
+    // Clic sur "VISUALISER AU BUTOSCOPE"
+    triggerButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const goalId = btn.dataset.triggerGoal;
+        if (goalId) {
+          window.dispatchEvent(
+            new CustomEvent('select-goal', { detail: { goalId } })
+          );
+        }
+      });
+    });
+  });
+</script>

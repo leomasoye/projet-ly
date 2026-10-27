@@ -1,0 +1,113 @@
+---
+import { getValidatedRecords } from '../lib/data-validator';
+import { formatDateFr } from '../lib/utils';
+
+const records = getValidatedRecords();
+// Tri chronologique des records
+const sortedRecords = [...records].sort(
+  (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+);
+---
+
+<section id="records" class="py-16 px-4 md:px-8 border-b border-border-bitume bg-bitume-surface relative">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header de Section -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+      <div>
+        <div class="flex items-center gap-2 font-mono text-xs text-chasuble mb-2">
+          <span>/// 02</span>
+          <span class="text-craie-dim">•</span>
+          <span>HISTOIRE EN MARCHE</span>
+          <span class="text-craie-dim">•</span>
+          <span class="stamp-304 text-[10px]">CHRONO 304</span>
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-craie leading-none">
+          TIMELINE DES RECORDS DE PRÉCOCITÉ
+        </h2>
+        <p class="mt-2 text-sm text-craie-muted max-w-2xl font-sans">
+          Chaque jalon pulvérisé jour après jour. Retrouvez l'âge exact de Lamine Yamal au moment où il a réécrit l'histoire du football espagnol et mondial.
+        </p>
+      </div>
+
+      <div class="bg-bitume border border-border-bitume px-4 py-2 font-mono text-xs self-start md:self-auto">
+        <span class="text-craie-dim">TOTAL RECORDS HOMOLOGUÉS :</span>
+        <span class="text-chasuble font-bold ml-2">{records.length} DÉTENUS</span>
+      </div>
+    </div>
+
+    <!-- Axe Chronologique Brutaliste -->
+    <div class="relative">
+      <!-- Ligne centrale verticale (Desktop) / Ligne gauche (Mobile) -->
+      <div class="absolute top-0 bottom-0 left-4 md:left-1/2 w-0.5 bg-border-bitume -translate-x-1/2 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="space-y-8 md:space-y-12">
+        {sortedRecords.map((record, index) => {
+          const isEven = index % 2 === 0;
+
+          return (
+            <div class={`relative flex flex-col md:flex-row items-start md:items-center ${isEven ? 'md:flex-row-reverse' : ''} group`}>
+              
+              <!-- Nœud Chronologique Central -->
+              <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-bitume border-2 border-border-bitume flex items-center justify-center font-mono font-bold text-xs text-chasuble z-10 group-hover:border-chasuble group-hover:bg-chasuble group-hover:text-bitume transition-colors">
+                {index + 1}
+              </div>
+
+              <!-- Contenu de la Carte (Largeur 50% sur desktop avec décalage) -->
+              <div class="ml-12 md:ml-0 md:w-1/2 md:px-8 w-full">
+                <div class="bg-bitume border-2 border-border-bitume p-6 relative hover:border-chasuble transition-all group-hover:shadow-brutal-chasuble">
+                  
+                  <!-- Tag Âge Exact en Évidence -->
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-3 border-b border-border-bitume pb-3">
+                    <span class="bg-chasuble text-bitume font-mono font-black text-xs px-2.5 py-1 uppercase tracking-wider">
+                      ÂGE : {record.exactAge.years} ANS ET {record.exactAge.days} JOURS
+                    </span>
+                    <span class="text-xs font-mono text-craie-dim uppercase">
+                      {formatDateFr(record.date)}
+                    </span>
+                  </div>
+
+                  <!-- Intitulé du Record -->
+                  <h3 class="font-display text-2xl sm:text-3xl font-black uppercase text-craie leading-tight mb-2">
+                    {record.title}
+                  </h3>
+
+                  <!-- Contexte du Match -->
+                  <div class="font-mono text-xs text-chasuble mb-3 flex items-center gap-2">
+                    <span>{record.competition}</span>
+                    <span class="text-craie-dim">•</span>
+                    <span class="text-craie">{record.matchContext}</span>
+                  </div>
+
+                  <!-- Description / Ancien Détenteur -->
+                  {record.description && (
+                    <p class="text-xs sm:text-sm text-craie-muted font-sans leading-relaxed mb-4">
+                      {record.description}
+                    </p>
+                  )}
+
+                  <!-- Statut & Ancien Détenteur -->
+                  <div class="pt-3 border-t border-border-bitume flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2 h-2 bg-chasuble inline-block"></span>
+                      <span class="text-craie font-bold uppercase tracking-wider">STATUT : {record.status}</span>
+                    </div>
+
+                    {record.previousHolder && (
+                      <div class="text-craie-dim text-[11px]">
+                        Ancien record : <span class="text-craie-muted">{record.previousHolder}</span>
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Espace vide symétrique pour l'équilibre desktop -->
+              <div class="hidden md:block md:w-1/2"></div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

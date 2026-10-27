@@ -1,0 +1,51 @@
+---
+import { getPlayerProfile } from '../lib/data-validator';
+
+const player = getPlayerProfile();
+---
+
+<header class="sticky top-0 z-50 bg-bitume/90 backdrop-blur-none border-b border-border-bitume py-3 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Marqueur Identitaire -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="bg-chasuble text-bitume font-display text-xl px-2 py-0.5 tracking-wider font-black group-hover:bg-craie transition-colors">
+        304
+      </div>
+      <div class="flex flex-col">
+        <span class="font-display tracking-wider text-base text-craie leading-none uppercase">
+          LAMINE YAMAL
+        </span>
+        <span class="font-mono text-[10px] text-craie-muted tracking-widest leading-none mt-1">
+          ROCAFONDA • ARCHIVE
+        </span>
+      </div>
+    </a>
+
+    <!-- Navigation Rapide -->
+    <nav class="hidden md:flex items-center gap-6 font-mono text-xs uppercase tracking-wider">
+      <a href="#butoscope" class="text-craie-muted hover:text-chasuble transition-colors py-1">
+        [01] Le Butoscope
+      </a>
+      <a href="#records" class="text-craie-muted hover:text-chasuble transition-colors py-1">
+        [02] Records de Précocité
+      </a>
+      <a href="#buts" class="text-craie-muted hover:text-chasuble transition-colors py-1">
+        [03] Chronologie des Buts
+      </a>
+      <a href="#palmares" class="text-craie-muted hover:text-chasuble transition-colors py-1">
+        [04] Palmarès
+      </a>
+    </nav>
+
+    <!-- Statut en Direct -->
+    <div class="flex items-center gap-2 border border-border-bitume bg-bitume-surface px-3 py-1 font-mono text-xs">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-chasuble opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-chasuble"></span>
+      </span>
+      <span class="text-craie uppercase text-[11px] font-bold">EN ACTIVITÉ</span>
+      <span class="text-craie-dim">|</span>
+      <span class="text-catalan-blau font-bold">#{player.jerseyNumber}</span>
+    </div>
+  </div>
+</header>
