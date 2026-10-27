@@ -1,0 +1,57 @@
+name: Rafraîchissement Hebdomadaire des Statistiques 304
+
+on:
+  schedule:
+    # Exécution chaque lundi à 04h00 UTC (après les matchs de Liga du week-end)
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+    # Permet un déclenchement manuel à tout moment depuis GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    name: Ingestion API & Re-build SSG
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Cloner le dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ⚙️ Configurer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: 📦 Installer les dépendances
+        run: npm ci
+
+      - name: 🔄 Exécuter le script d'ingestion sécurisé
+        env:
+          FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
+          FOOTBALL_API_PROVIDER: 'api-football'
+        run: npm run fetch-stats
+
+      - name: 🛡️ Valider l'intégrité TypeScript & SSG
+        run: |
+          npm run check
+          npm run build
+
+      - name: 📝 Commiter et pousser les modifications
+        run: |
+          if [ -n "$(git status --porcelain data/yamal-stats.json)" ]; then
+            echo "Nouveaux buts ou statistiques détectés. Création du commit..."
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git add data/yamal-stats.json
+            git commit -m "chore(data): auto-update Lamine Yamal statistics [cron]"
+            git push origin main
+            echo "✅ Données synchronisées. Déclenchement automatique du build Vercel."
+          else
+            echo "Aucune modification de données détectée cette semaine."
+          fi
