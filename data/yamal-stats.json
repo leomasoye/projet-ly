@@ -17,7 +17,7 @@
     "totalMatches": 78,
     "totalTrophies": 4,
     "totalRecords": 7,
-    "lastUpdated": "2026-10-27"
+    "lastUpdated": "2026-10-28"
   },
   "goals": [
     {
@@ -40,7 +40,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=h-h8jR_y9z8",
       "description": "Premier but en Liga à seulement 16 ans et 87 jours. À la réception d'un ballon glissé par João Félix au second poteau, il pousse le cuir au fond des filets de près pour sonner la révolte blaugrana.",
       "importance": "Historique",
-      "tags": ["Premier but Liga", "Record de précocité", "Rocafonda"]
+      "tags": [
+        "Premier but Liga",
+        "Record de précocité",
+        "Rocafonda"
+      ]
     },
     {
       "id": "goal-02-georgia-first-spain",
@@ -62,7 +66,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=X_bU94wK1s8",
       "description": "Pour sa toute première sélection avec la Roja senior à 16 ans et 57 jours, servi idéalement en retrait par Nico Williams, il décoche une frappe sèche du plat du pied gauche dans le petit filet opposé.",
       "importance": "Historique",
-      "tags": ["Première sélection", "Premier but Roja", "Duo Nico-Lamine"]
+      "tags": [
+        "Première sélection",
+        "Premier but Roja",
+        "Duo Nico-Lamine"
+      ]
     },
     {
       "id": "goal-03-mallorca-curler",
@@ -84,7 +92,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=Q_f7mP9K2j1",
       "description": "Chef-d'œuvre pur au Stade de Montjuïc. Après un relais avec Lewandowski, Lamine fixe son défenseur à l'angle droit des 16 mètres, crochète intérieur et nettoie la lucarne opposée d'un enroulé parfait.",
       "importance": "Décisif",
-      "tags": ["Lucarne", "Montjuïc", "Chef-d'œuvre"]
+      "tags": [
+        "Lucarne",
+        "Montjuïc",
+        "Chef-d'œuvre"
+      ]
     },
     {
       "id": "goal-04-france-euro-banger",
@@ -106,7 +118,12 @@
       "videoUrl": "https://www.youtube.com/watch?v=L_yA304mK88",
       "description": "Le tournant de l'Euro 2024. Demi-finale face à la France à Munich : à 25 mètres, il feinte Adrien Rabiot, arme une trajectoire téléguidée supersonique qui heurte le poteau avant de tromper Mike Maignan. Plus jeune buteur de l'histoire de l'Euro à 16 ans et 362 jours.",
       "importance": "Historique",
-      "tags": ["Euro 2024", "Poteau rentrant", "But du tournoi", "304"]
+      "tags": [
+        "Euro 2024",
+        "Poteau rentrant",
+        "But du tournoi",
+        "304"
+      ]
     },
     {
       "id": "goal-05-real-madrid-clasico",
@@ -128,7 +145,12 @@
       "videoUrl": "https://www.youtube.com/watch?v=C_lA51c0304",
       "description": "Démonstration au Santiago Bernabéu. Alerté côté droit par Raphinha, Lamine contrôle et déclenche une mine instantanée du pied droit sous la transversale de Lunin. Célébration 304 face au public adverse, devenant le plus jeune buteur d'un Clásico à 17 ans et 105 jours.",
       "importance": "Historique",
-      "tags": ["Clasico", "Bernabéu", "Pied droit", "304"]
+      "tags": [
+        "Clasico",
+        "Bernabéu",
+        "Pied droit",
+        "304"
+      ]
     },
     {
       "id": "goal-06-monaco-first-ucl",
@@ -150,7 +172,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=M_nC19uCl88",
       "description": "Premier but en Ligue des Champions au Stade Louis-II. Sur une diagonale millimétrée de Marc Casadó, contrôle d'exception, élimination de deux défenseurs par un crochet intérieur et frappe au ras du poteau.",
       "importance": "Historique",
-      "tags": ["Ligue des Champions", "Premier but UCL", "Louis-II"]
+      "tags": [
+        "Ligue des Champions",
+        "Premier but UCL",
+        "Louis-II"
+      ]
     },
     {
       "id": "goal-07-athletic-copa-solo",
@@ -172,7 +198,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=S_aNm9y4C0p",
       "description": "Numéro de soliste étourdissant dans la cathédrale de San Mamés. Parti de la ligne de touche droite, il mystifie son vis-à-vis en repiquant et trouve la faille d'une frappe rasante au premier poteau.",
       "importance": "Spectaculaire",
-      "tags": ["San Mamés", "Coupe du Roi", "Solitaire"]
+      "tags": [
+        "San Mamés",
+        "Coupe du Roi",
+        "Solitaire"
+      ]
     },
     {
       "id": "goal-08-girona-brace-1",
@@ -194,7 +224,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=G_r0nA30401",
       "description": "Pressing d'attaquant d'élite à Montilivi. Il subtilise le cuir dans les pieds de David López à l'entrée de la surface et punit instantanément le portier adverse d'un plat du pied imparable.",
       "importance": "Décisif",
-      "tags": ["Derby Catalan", "Pressing", "Doublé"]
+      "tags": [
+        "Derby Catalan",
+        "Pressing",
+        "Doublé"
+      ]
     },
     {
       "id": "goal-09-girona-brace-2",
@@ -216,7 +250,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=G_r0nA30402",
       "description": "Sept minutes après son premier but, sur un coup franc repoussé aux 18 mètres, il reprend d'une demi-volée enveloppée du pied gauche qui se loge au ras du montant opposé.",
       "importance": "Spectaculaire",
-      "tags": ["Derby Catalan", "Doublé", "Demi-volée"]
+      "tags": [
+        "Derby Catalan",
+        "Doublé",
+        "Demi-volée"
+      ]
     },
     {
       "id": "goal-10-athletic-liga-curler",
@@ -238,7 +276,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=B_iL8a0304m",
       "description": "Face à son acolyte Nico Williams à Montjuïc, il prend l'initiative depuis l'aile droite, contourne la défense adverse et décoche une frappe enroulée flottante qui fait exploser les tribunes catalanes.",
       "importance": "Décisif",
-      "tags": ["Montjuïc", "Duel Nico-Lamine", "Victoire"]
+      "tags": [
+        "Montjuïc",
+        "Duel Nico-Lamine",
+        "Victoire"
+      ]
     },
     {
       "id": "goal-11-osasuna-supercopa",
@@ -260,7 +302,11 @@
       "videoUrl": "https://www.youtube.com/watch?v=O_sAs9u3041",
       "description": "Dans les arrêts de jeu de la demi-finale à Riyad. Sur un festival technique de Pedri qui élimine deux défenseurs, Lamine est servi dans la course et bat Herrera d'un tir croisé clinique.",
       "importance": "Décisif",
-      "tags": ["Supercoupe", "Clutch", "Pedri-Yamal"]
+      "tags": [
+        "Supercoupe",
+        "Clutch",
+        "Pedri-Yamal"
+      ]
     }
   ],
   "trophies": [
