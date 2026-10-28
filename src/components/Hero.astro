@@ -10,123 +10,222 @@ const currentAge = calculateCurrentAge(player.birthDate);
 const decisiveRatio = ((overview.totalGoals + overview.totalAssists) / overview.totalMatches).toFixed(2);
 ---
 
-<section class="relative pt-12 pb-16 px-4 md:px-8 border-b border-border-bitume overflow-hidden">
+<section class="pt-8 sm:pt-12 px-4 md:px-8">
   <div class="max-w-7xl mx-auto">
-    <!-- Entête de Section Éditoriale -->
-    <div class="flex flex-wrap items-center justify-between gap-4 mb-6 font-mono text-xs text-craie-muted">
-      <div class="flex items-center gap-3">
-        <span class="stamp-304">DOSSIER 08304</span>
-        <span class="text-chasuble">/// MATARÓ — CATALOGNE</span>
-      </div>
-      <!-- Badge Dynamique Âge et Statut -->
-      <div class="inline-flex items-center gap-3 bg-asphalte border border-border-bitume px-3 py-1.5 text-xs">
-        <span class="text-chasuble font-bold uppercase">● STATUT : EN ACTIVITÉ</span>
-        <span class="text-craie-dim">|</span>
-        <span class="text-craie font-mono">
-          ÂGE ACTUEL : <strong class="text-craie font-bold">{currentAge.formatted}</strong>
-        </span>
+    
+    <!-- Profil Institutionnel & Fiche Joueur -->
+    <div class="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8 md:p-10 shadow-xs mb-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Colonne Gauche : Identité & Bio Officielle (8 colonnes) -->
+        <div class="lg:col-span-8 flex flex-col justify-center">
+          
+          <!-- Badges de Contexte / Compétition -->
+          <div class="flex flex-wrap items-center gap-2.5 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#edf4fb] text-[#004D98] border border-[#004D98]/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#004D98]"></span>
+              FC Barcelone
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#fdf2f5] text-[#A50044] border border-[#A50044]/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#A50044]"></span>
+              Sélection d'Espagne
+            </span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-[#F1F5F9] text-[#475569] border border-[#E2E8F0]">
+              La Liga EA Sports
+            </span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-[#fef9e6] text-[#A16207] border border-[#EDBB00]/30 font-semibold">
+              ★ Champion d'Europe 2024
+            </span>
+          </div>
+
+          <!-- Nom Principal & Poste -->
+          <div class="mb-4">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-none mb-2">
+              Lamine Yamal
+            </h1>
+            <p class="text-base sm:text-lg text-[#475569] font-medium flex flex-wrap items-center gap-2">
+              <span>{player.position}</span>
+              <span class="text-[#CBD5E1]">•</span>
+              <span class="text-[#004D98] font-semibold">Dossier Rocafonda (08304)</span>
+              <span class="text-[#CBD5E1]">•</span>
+              <span class="text-[#64748B]">Maillot #{player.jerseyNumber}</span>
+            </p>
+          </div>
+
+          <!-- Description de Synthèse Analytique -->
+          <p class="text-sm sm:text-base text-[#475569] leading-relaxed max-w-2xl mb-6">
+            Découvrez le profil complet, les trajectoires balistiques de chaque réalisation et la chronologie des records de précocité pulvérisés par le prodige catalan sous les couleurs du FC Barcelone et de la Roja.
+          </p>
+
+          <!-- Grille Fiche d'Identité Joueur (Sofascore Style) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-[#E2E8F0]">
+            <div class="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0]">
+              <span class="block text-[11px] font-medium text-[#64748B] uppercase tracking-wider">Âge Actuel</span>
+              <span class="block text-sm font-bold text-[#0F172A] mt-0.5">{currentAge.formatted}</span>
+            </div>
+            <div class="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0]">
+              <span class="block text-[11px] font-medium text-[#64748B] uppercase tracking-wider">Pied Dominant</span>
+              <span class="block text-sm font-bold text-[#0F172A] mt-0.5">{player.dominantFoot} (Inversé)</span>
+            </div>
+            <div class="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0]">
+              <span class="block text-[11px] font-medium text-[#64748B] uppercase tracking-wider">Lieu de Naissance</span>
+              <span class="block text-sm font-bold text-[#0F172A] mt-0.5 truncate" title="Esplugues de Llobregat, Catalogne">Esplugues, Catalogne</span>
+            </div>
+            <div class="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0]">
+              <span class="block text-[11px] font-medium text-[#64748B] uppercase tracking-wider">Statut Fiche</span>
+              <span class="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 mt-0.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Homologuée
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Colonne Droite : Silhouette / Badge Visuel Officiel FC Barcelone (4 colonnes) -->
+        <div class="lg:col-span-4 flex items-center justify-center">
+          <div class="w-full max-w-xs bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] rounded-xl border border-[#E2E8F0] p-6 flex flex-col items-center text-center relative overflow-hidden shadow-xs">
+            
+            <!-- Décoration supérieure Blaugrana -->
+            <div class="absolute top-0 left-0 right-0 h-1.5 barca-stripe"></div>
+
+            <!-- Carte Silhouette & Maillot Stylisé -->
+            <div class="relative w-28 h-28 my-3 flex items-center justify-center">
+              <!-- Cercle de fond avec les couleurs du Barça -->
+              <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#004D98]/15 via-transparent to-[#A50044]/15 border border-[#004D98]/20"></div>
+              
+              <!-- Illustration Vectorielle Silhouette Joueur / Maillot Officiel -->
+              <svg class="w-20 h-20 text-[#004D98] relative z-10 drop-shadow-xs" viewBox="0 0 100 100" fill="none">
+                <!-- Tête silhouette épurée -->
+                <circle cx="50" cy="24" r="14" fill="#004D98" />
+                <!-- Buste avec rayures Blaugrana stylisées -->
+                <path d="M22 84 C22 55, 33 44, 50 44 C67 44, 78 55, 78 84 Z" fill="#004D98" />
+                <!-- Bandes grenat Barça sur le maillot -->
+                <path d="M33 46 C39 52, 38 70, 37 84 L46 84 C46 68, 46 50, 43 45 Z" fill="#A50044" />
+                <path d="M57 45 C54 50, 54 68, 54 84 L63 84 C62 70, 61 52, 67 46 Z" fill="#A50044" />
+                <!-- Col / Encolure dorée -->
+                <path d="M43 44 C47 48, 53 48, 57 44 Z" fill="#EDBB00" />
+              </svg>
+
+              <!-- Badge Numéro 19 -->
+              <span class="absolute -bottom-1 -right-1 bg-[#A50044] text-white text-xs font-black px-2 py-0.5 rounded-full shadow-xs border-2 border-white">
+                #19
+              </span>
+            </div>
+
+            <!-- Fiche d'évaluation Sofascore Style -->
+            <div class="mt-2">
+              <span class="text-xs font-semibold text-[#004D98] uppercase tracking-wider block">
+                FC Barcelone • Équipe Première
+              </span>
+              <span class="text-xs text-[#64748B] block mt-0.5">
+                Note Moyenne Saison : <strong class="text-[#0F172A] font-bold">7.84</strong>
+              </span>
+            </div>
+
+            <div class="w-full mt-4 pt-3 border-t border-[#E2E8F0] flex items-center justify-around text-xs text-[#475569]">
+              <div>
+                <span class="block text-[10px] text-[#64748B]">Taille</span>
+                <span class="font-bold text-[#0F172A]">1.80 m</span>
+              </div>
+              <div class="h-6 w-px bg-[#E2E8F0]"></div>
+              <div>
+                <span class="block text-[10px] text-[#64748B]">Sélections</span>
+                <span class="font-bold text-[#0F172A]">17 A</span>
+              </div>
+              <div class="h-6 w-px bg-[#E2E8F0]"></div>
+              <div>
+                <span class="block text-[10px] text-[#64748B]">Rocafonda</span>
+                <span class="font-bold text-[#A50044]">08304</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- Titre Géant Brutaliste -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
-      <div class="lg:col-span-8">
-        <p class="font-mono text-xs uppercase tracking-[0.3em] text-craie-dim mb-2">
-          MANIFESTE ÉDITORIAL /// NUMÉRO 304
-        </p>
-        <h1 class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tight leading-[0.88] text-craie font-black">
-          304 — ROCAFONDA <br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-chasuble to-craie">
-            TO THE WORLD
+    <!-- CARTES DE STATISTIQUES CLÉS (Fond blanc, chiffres en bleu Barça, libellés grisés) -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      
+      <!-- 1. Buts Officiels -->
+      <div class="bg-white rounded-xl border border-[#E2E8F0] p-5 sm:p-6 shadow-xs hover:shadow-card-hover transition-all">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-semibold text-[#64748B] uppercase tracking-wider">
+            Buts Officiels
           </span>
-        </h1>
-        <p class="mt-6 text-base sm:text-lg text-craie-muted max-w-2xl font-sans leading-relaxed border-l-2 border-chasuble pl-4">
-          De la dalle d'asphalte du quartier populaire de Rocafonda (code postal <span class="text-chasuble font-mono font-bold">08304</span>) jusqu'au toit de l'Europe. Retrouvez la trajectoire millimétrée, les coordonnées de chaque frappe et l'encyclopédie des records brisés par <strong class="text-craie font-bold">{player.fullName}</strong>.
-        </p>
-      </div>
-
-      <!-- Bloc Club & Maillot -->
-      <div class="lg:col-span-4 flex flex-col justify-end">
-        <div class="bg-asphalte border-2 border-border-bitume p-6 relative">
-          <div class="absolute -top-3 right-4 bg-catalan-blau text-craie px-2 py-0.5 font-display text-sm tracking-wider uppercase">
-            BLAUGRANA #19
-          </div>
-          <div class="font-mono text-xs text-craie-dim mb-1">PROFIL TACTIQUE</div>
-          <div class="font-headline font-bold text-xl text-craie">{player.position}</div>
-          <div class="text-xs text-craie-muted mt-1">Pied dominant : <span class="text-chasuble font-bold">{player.dominantFoot}</span></div>
-          <div class="mt-4 pt-4 border-t border-border-bitume flex items-center justify-between text-xs font-mono">
-            <span class="text-craie-muted">Club actuel :</span>
-            <span class="text-craie font-bold">{player.currentClub}</span>
-          </div>
+          <span class="w-7 h-7 rounded-lg bg-[#edf4fb] text-[#004D98] flex items-center justify-center text-xs font-bold">
+            ⚽
+          </span>
         </div>
-      </div>
-    </div>
-
-    <!-- CHIFFRES CLÉS GÉANTS (Brutaliste Métriques) -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-      <!-- 1. Buts -->
-      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-chasuble transition-colors">
-        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
-          [01] BUTS PROS
-        </div>
-        <div class="font-display text-6xl sm:text-7xl font-black text-chasuble leading-none">
+        <div class="text-4xl sm:text-5xl font-black text-[#004D98] tracking-tight tabular-nums leading-none">
           {overview.totalGoals}
         </div>
-        <div class="font-mono text-xs text-craie-muted mt-3">
-          Dont <strong class="text-craie">{goals.length}</strong> buts clés analysés au Butoscope
-        </div>
-        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
-          GOL
-        </div>
+        <p class="text-xs text-[#64748B] mt-3 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#004D98]"></span>
+          <span>Dont <strong class="text-[#0F172A] font-semibold">{goals.length}</strong> buts analysés au Butoscope</span>
+        </p>
       </div>
 
       <!-- 2. Passes Décisives -->
-      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-catalan-blau transition-colors">
-        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
-          [02] PASSES DÉCISIVES
+      <div class="bg-white rounded-xl border border-[#E2E8F0] p-5 sm:p-6 shadow-xs hover:shadow-card-hover transition-all">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-semibold text-[#64748B] uppercase tracking-wider">
+            Passes Décisives
+          </span>
+          <span class="w-7 h-7 rounded-lg bg-[#edf4fb] text-[#004D98] flex items-center justify-center text-xs font-bold">
+            🎯
+          </span>
         </div>
-        <div class="font-display text-6xl sm:text-7xl font-black text-craie leading-none">
+        <div class="text-4xl sm:text-5xl font-black text-[#004D98] tracking-tight tabular-nums leading-none">
           {overview.totalAssists}
         </div>
-        <div class="font-mono text-xs text-craie-muted mt-3">
-          Co-meilleur passeur de l'Euro 2024 (4 assists)
-        </div>
-        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
-          AST
-        </div>
+        <p class="text-xs text-[#64748B] mt-3 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span>Co-meilleur passeur Euro 2024 (4 assists)</span>
+        </p>
       </div>
 
       <!-- 3. Trophées Majeurs -->
-      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-catalan-grana transition-colors">
-        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
-          [03] TITRES MAJEURS
+      <div class="bg-white rounded-xl border border-[#E2E8F0] p-5 sm:p-6 shadow-xs hover:shadow-card-hover transition-all border-l-4 border-l-[#EDBB00]">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-semibold text-[#64748B] uppercase tracking-wider">
+            Titres Majeurs
+          </span>
+          <span class="w-7 h-7 rounded-lg bg-[#fef9e6] text-[#A16207] flex items-center justify-center text-xs font-bold">
+            🏆
+          </span>
         </div>
-        <div class="font-display text-6xl sm:text-7xl font-black text-catalan-grana leading-none">
+        <div class="text-4xl sm:text-5xl font-black text-[#004D98] tracking-tight tabular-nums leading-none">
           0{overview.totalTrophies}
         </div>
-        <div class="font-mono text-xs text-craie-muted mt-3">
-          Euro 2024 • Trophée Kopa • La Liga
-        </div>
-        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
-          CUP
-        </div>
+        <p class="text-xs text-[#64748B] mt-3 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#EDBB00]"></span>
+          <span>Euro 2024 • Kopa • La Liga</span>
+        </p>
       </div>
 
-      <!-- 4. Ratio d'Impact -->
-      <div class="bg-asphalte border-2 border-border-bitume p-6 relative group hover:border-chasuble transition-colors">
-        <div class="text-xs font-mono text-craie-dim uppercase tracking-wider mb-1">
-          [04] DÉCISIVITÉ / MATCH
+      <!-- 4. Décisivité / Match -->
+      <div class="bg-white rounded-xl border border-[#E2E8F0] p-5 sm:p-6 shadow-xs hover:shadow-card-hover transition-all">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-semibold text-[#64748B] uppercase tracking-wider">
+            Actions Décisives / Match
+          </span>
+          <span class="w-7 h-7 rounded-lg bg-[#fdf2f5] text-[#A50044] flex items-center justify-center text-xs font-bold">
+            ⚡
+          </span>
         </div>
-        <div class="font-display text-6xl sm:text-7xl font-black text-craie leading-none">
+        <div class="text-4xl sm:text-5xl font-black text-[#004D98] tracking-tight tabular-nums leading-none">
           {decisiveRatio}
         </div>
-        <div class="font-mono text-xs text-craie-muted mt-3">
-          41 actions décisives en {overview.totalMatches} apparitions
-        </div>
-        <div class="absolute bottom-2 right-3 font-display text-4xl text-border-bitume select-none pointer-events-none">
-          G+A
-        </div>
+        <p class="text-xs text-[#64748B] mt-3 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#A50044]"></span>
+          <span>41 actions (G+A) en {overview.totalMatches} matchs</span>
+        </p>
       </div>
+
     </div>
+
   </div>
 </section>

@@ -2,24 +2,8 @@
 @config "../../tailwind.config.mjs";
 
 /* ==========================================================================
-   POLICES LOCALES (RGPD & ZÉRO REQUÊTE EXTERNE)
+   POLICE LOCALE INTER (RGPD & PERFORMANCE SSG MAXIMALE)
    ========================================================================== */
-@font-face {
-  font-family: 'Bebas Neue';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/bebas-neue.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Syne';
-  font-style: normal;
-  font-weight: 700 800;
-  font-display: swap;
-  src: url('/fonts/syne-bold.woff2') format('woff2');
-}
-
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -29,82 +13,93 @@
 }
 
 /* ==========================================================================
-   DESIGN TOKENS TAILWIND V4 - FANZINE BRUTALISTE 304
+   DESIGN TOKENS TAILWIND V4 - DASHBOARD ANALYTIQUE FC BARCELONE
    ========================================================================== */
 @theme {
-  --color-bitume: #0D0E12;
-  --color-bitume-surface: #14161D;
-  --color-bitume-dark: #08080B;
-  --color-asphalte: #1C1E24;
-  --color-asphalte-light: #252830;
-  --color-border-bitume: #2A2D35;
-  --color-border-light: #3E424E;
-  --color-craie: #F2F2F0;
-  --color-craie-muted: #9E9EA4;
-  --color-craie-dim: #656770;
-  --color-catalan-blau: #004D98;
-  --color-catalan-grana: #A50044;
-  --color-chasuble: #E2F163;
-  --color-chasuble-glow: #F0FB80;
-  --color-chasuble-dark: #B5C438;
+  --color-barca-blau: #004D98;
+  --color-barca-blau-dark: #00366b;
+  --color-barca-blau-light: #edf4fb;
+  --color-barca-grana: #A50044;
+  --color-barca-grana-dark: #800034;
+  --color-barca-grana-light: #fdf2f5;
+  --color-barca-gold: #EDBB00;
+  --color-barca-gold-accent: #D4AF37;
+  --color-barca-gold-light: #fef9e6;
 
-  --font-display: 'Bebas Neue', Impact, sans-serif;
-  --font-headline: 'Syne', sans-serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --color-surface-page: #F8FAFC;
+  --color-surface-card: #FFFFFF;
+  --color-surface-alt: #F1F5F9;
 
-  --shadow-brutal-chasuble: 4px 4px 0px 0px #E2F163;
-  --shadow-brutal-blau: 4px 4px 0px 0px #004D98;
-  --shadow-brutal-grana: 4px 4px 0px 0px #A50044;
-  --shadow-brutal-craie: 4px 4px 0px 0px #F2F2F0;
+  --color-border-subtle: #E2E8F0;
+  --color-border-medium: #CBD5E1;
+
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  --color-text-light: #94A3B8;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+  --shadow-card-hover: 0 4px 12px 0 rgba(0, 77, 152, 0.08), 0 2px 4px -2px rgba(0, 77, 152, 0.04);
+  --shadow-gold: 0 4px 14px 0 rgba(237, 187, 0, 0.18);
+  --shadow-blau: 0 4px 14px 0 rgba(0, 77, 152, 0.18);
 }
 
 /* ==========================================================================
-   STYLES GLOBAUX & TEXTURES ÉDITORIALES BRUTALISTES
+   STYLES GLOBAUX & AMBIANCE LUMINEUSE ÉPURÉE
    ========================================================================== */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background-color: var(--color-bitume);
-  color: var(--color-craie);
+  background-color: var(--color-surface-page);
+  color: var(--color-text-primary);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Texture tramée bitume subtile */
-.bg-grid-pattern {
-  background-size: 24px 24px;
-  background-image: 
-    linear-gradient(to right, rgba(42, 45, 53, 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(42, 45, 53, 0.35) 1px, transparent 1px);
+/* Chiffres tabulaires pour l'alignement parfait des tableaux et métriques */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
-/* Stamp / Tampon officiel 304 */
-.stamp-304 {
-  display: inline-block;
-  border: 2px solid var(--color-chasuble);
-  color: var(--color-chasuble);
-  padding: 0.15rem 0.5rem;
-  font-family: var(--font-display);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  transform: rotate(-1.5deg);
+/* Bordure de délimitation de section douce */
+.section-divider {
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
-/* Effets de survol brutaliste */
-.btn-brutal {
-  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+/* Liseré supérieur aux couleurs du FC Barcelone */
+.barca-stripe {
+  background: linear-gradient(90deg, #004D98 0%, #004D98 50%, #A50044 50%, #A50044 100%);
 }
 
-.btn-brutal:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0px 0px var(--color-chasuble);
+/* Badge pilule de statistiques Sofascore */
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
-.btn-brutal:active {
-  transform: translate(0px, 0px);
-  box-shadow: 0px 0px 0px 0px transparent;
+/* Scrollbars modernes et discrètes */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
 }

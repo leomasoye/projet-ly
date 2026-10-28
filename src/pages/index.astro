@@ -9,15 +9,15 @@ import Trophies from '../components/Trophies.astro';
 ---
 
 <Layout 
-  title="304 — LAMINE YAMAL | Butoscope Interactif, Records & Fanzine Brutaliste"
-  description="Plateforme éditoriale brute et performante dédiée à Lamine Yamal (08304). Explorez le Butoscope interactif balistique, la timeline des records de précocité et le palmarès mondial."
+  title="Lamine Yamal — Statistiques Officielles, Butoscope & Records | FC Barcelone"
+  description="Interface de statistiques moderne et épurée dédiée à Lamine Yamal. Cartographie interactive des buts (Butoscope), records de précocité et palmarès officiel."
 >
   <Header />
-  <main>
+  <main class="space-y-12 sm:space-y-16 pb-16">
     <Hero />
     <Butoscope />
-    <RecordsTimeline />
     <GoalList />
+    <RecordsTimeline />
     <Trophies />
   </main>
 </Layout>

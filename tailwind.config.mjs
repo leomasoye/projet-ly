@@ -4,45 +4,43 @@ export default {
   theme: {
     extend: {
       colors: {
-        bitume: {
-          DEFAULT: '#0D0E12',
-          surface: '#14161D',
-          dark: '#08080B',
+        barca: {
+          blau: '#004D98',
+          'blau-dark': '#00366b',
+          'blau-light': '#edf4fb',
+          grana: '#A50044',
+          'grana-dark': '#800034',
+          'grana-light': '#fdf2f5',
+          gold: '#EDBB00',
+          'gold-accent': '#D4AF37',
+          'gold-light': '#fef9e6',
         },
-        asphalte: {
-          DEFAULT: '#1C1E24',
-          light: '#252830',
+        surface: {
+          page: '#F8FAFC',
+          card: '#FFFFFF',
+          alt: '#F1F5F9',
         },
         border: {
-          bitume: '#2A2D35',
-          light: '#3E424E',
+          subtle: '#E2E8F0',
+          medium: '#CBD5E1',
+          focus: '#004D98',
         },
-        craie: {
-          DEFAULT: '#F2F2F0',
-          muted: '#9E9EA4',
-          dim: '#656770',
-        },
-        catalan: {
-          blau: '#004D98',
-          grana: '#A50044',
-        },
-        chasuble: {
-          DEFAULT: '#E2F163',
-          glow: '#F0FB80',
-          dark: '#B5C438',
+        text: {
+          primary: '#0F172A',
+          secondary: '#475569',
+          muted: '#64748B',
+          light: '#94A3B8',
         },
       },
       fontFamily: {
-        display: ['"Bebas Neue"', 'sans-serif'],
-        headline: ['"Syne"', 'sans-serif'],
-        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        sans: ['"Inter"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       boxShadow: {
-        'brutal-chasuble': '4px 4px 0px 0px #E2F163',
-        'brutal-blau': '4px 4px 0px 0px #004D98',
-        'brutal-grana': '4px 4px 0px 0px #A50044',
-        'brutal-craie': '4px 4px 0px 0px #F2F2F0',
+        'card': '0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)',
+        'card-hover': '0 4px 12px 0 rgba(0, 77, 152, 0.08), 0 2px 4px -2px rgba(0, 77, 152, 0.04)',
+        'gold': '0 4px 14px 0 rgba(237, 187, 0, 0.18)',
+        'blau': '0 4px 14px 0 rgba(0, 77, 152, 0.20)',
+        'grana': '0 4px 14px 0 rgba(165, 0, 68, 0.20)',
       },
     },
   },

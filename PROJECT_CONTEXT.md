@@ -6,22 +6,22 @@
 
 ## 1. Vision Produit & Direction Artistique
 
-- **Concept** : Site éditorial fanzine de football au design **brutaliste urbain**, célébrant l'ascension fulgurante du prodige Lamine Yamal (« *De Rocafonda à l'Europe* »).
-- **Anti-Template IA** : 
-  - **Bannissement absolu** du style IA générique : dégradés violets/cyan pastel, glassmorphism translucide, cartes flottantes sans âme, ombres douces diffuses.
-  - **Esthétique brute & authentique** : textures bitume, découpes franches, grilles asymétriques inspirées des fanzines papier et de la presse sportive underground, contrastes extrêmes, typographies d'impact.
-- **Identité Rocafonda « 304 »** :
-  - Le code postal `08304` de Rocafonda (Mataró), célébré par Lamine à chaque but avec ses doigts (`3-0-4`), est le fil conducteur iconographique du projet (filigranes, numérotation, marquages techniques, éléments de grille, micro-détails).
-- **Palette chromatique identitaire** :
-  - **Bitume Profond** (`#0D0E12`) : arrière-plan texturé et dominant.
-  - **Blanc Craie** (`#F2F2F0`) : titrages et textes principaux à fort impact.
-  - **Bleu Catalan Tranchant** (`#004D98`) : accents identitaires club.
-  - **Grenat Catalan Profond** (`#A50044`) : accents contrastants puissants.
-  - **Jaune Chasuble / Fluo Street** (`#E2F163`) : surlignages, badges de records, micro-interactions, éléments d'avertissement et accents vifs.
+- **Concept** : Plateforme analytique de référence et interface de statistiques moderne, épurée et lumineuse dédiée au prodige Lamine Yamal, inspirée de l'identité institutionnelle du **FC Barcelone**.
+- **Philosophie Visuelle (Type Sofascore / FBref moderne / Dashboard analytique)** :
+  - **Ambiance** : Lumineuse, claire, aérée, structurée par des bordures fines et un espacement généreux (*whitespace*). Zéro surcharge visuelle ni effets kitsch.
+  - **Fonds structurels** : Blanc pur (`#FFFFFF`) pour les cartes et surfaces actives, combiné à un gris très clair subtil (`#F8FAFC` / `#F1F5F9`) pour délimiter harmonieusement les sections de contenu.
+- **Palette Chromatique FC Barcelone** :
+  - **Bleu Profond (Deep Blau)** (`#004D98`) : Titres principaux, indicateurs majeurs, éléments de navigation actifs et bordures d'accent.
+  - **Grenat Catalan (Blaugrana Red)** (`#A50044`) : Boutons d'action, highlights stratégiques, pastilles d'impact et badges d'état.
+  - **Or Discret (Gold Accent)** (`#EDBB00` / `#D4AF37`) : Trophées majeurs, distinctions individuelles, étoiles de records et touches de finition premium.
+  - **Neutres & Typographiques** :
+    - Titres & valeurs : Zinc foncé (`#0F172A`).
+    - Libellés & métriques secondaires : Gris ardoise (`#475569` et `#64748B`).
+    - Bordures discrètes & séparateurs : Gris technique subtil (`#E2E8F0`).
 - **Typographie** :
-  - Titres et chiffres d'impact : Polices ultra-condensées, massives et expressives (*Bebas Neue*, *Syne*).
-  - Corps de texte et métriques : Typographies techniques, nettes et lisibles (*Inter*, *JetBrains Mono*).
-  - **Hébergement local strict** dans `public/fonts/` (zéro requête externe Google Fonts, RGPD et vitesse maximale).
+  - Police unique sans-serif ultra-propre, moderne et lisible : **Inter** pour l'intégralité du site (titres, métriques chiffrées en chiffres tabulaires `tnum`, tableaux, libellés et corps de texte).
+  - Bannissement des déformations brutales, des effets de texte agressifs ou des majuscules surchargées.
+  - **Hébergement local strict** dans `public/fonts/` (zéro requête externe, RGPD et performance maximale).
 
 ---
 
@@ -76,7 +76,7 @@
 ## 5. Gouvernance & Workflow des Tâches
 
 Toute contribution ou étape de code doit se conformer aux trois compétences du projet consignées dans `.agent/skills/` :
-1. `design-system.md` : Règle d'or esthétique et respect du fanzine brutaliste 304.
+1. `design-system.md` : Règle d'or esthétique et respect de l'interface de statistiques moderne Barça.
 2. `security.md` : Verrous de sécurité, validation Zod et sandboxing.
 3. `static-architecture.md` : Respect du paradigme 100% SSG et performance maximale.
 

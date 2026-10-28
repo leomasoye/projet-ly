@@ -7,15 +7,15 @@ interface Props {
 }
 
 const {
-  title = "LAMINE YAMAL (304) — Archive Fanzine Brutaliste & Butoscope",
-  description = "De Rocafonda à l'Europe : Butoscope interactif, records de précocité, palmarès et statistiques officielles de Lamine Yamal (08304).",
+  title = "Lamine Yamal — Centre Analytique, Butoscope & Statistiques Officielles | FC Barcelone",
+  description = "Interface analytique de référence pour Lamine Yamal (FC Barcelone & Espagne). Cartographie interactive des buts (Butoscope), records de précocité et palmarès complet.",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://projet-ly.vercel.app');
 ---
 
 <!doctype html>
-<html lang="fr" class="bg-bitume text-craie scroll-smooth selection:bg-chasuble selection:text-bitume">
+<html lang="fr" class="bg-[#F8FAFC] text-[#0F172A] scroll-smooth selection:bg-[#004D98] selection:text-white">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://projet-l
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0D0E12" />
+    <meta name="theme-color" content="#004D98" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -42,12 +42,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://projet-l
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
 
-    <!-- Préchargement des polices locales pour un LCP immédiat -->
-    <link rel="preload" href="/fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/syne-bold.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Préchargement de la police Inter locale -->
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- Données structurées JSON-LD pour le SEO -->
+    <!-- Données structurées JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SportsPerson",
@@ -67,36 +65,41 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://projet-l
         }
       ],
       "sport": "Football",
-      "jobTitle": "Ailier droit (Inverted Winger)",
+      "jobTitle": "Ailier droit",
       "award": ["UEFA Euro 2024", "Trophée Kopa 2024", "La Liga 2022-2023"]
     })} />
   </head>
-  <body class="min-h-screen bg-bitume text-craie font-sans antialiased bg-grid-pattern relative flex flex-col justify-between overflow-x-hidden">
-    <!-- Filigrane géant 304 en arrière-plan -->
-    <div 
-      class="fixed inset-0 pointer-events-none select-none flex items-center justify-center opacity-[0.025] z-0 overflow-hidden font-display text-[45vw] leading-none text-craie font-black"
-      aria-hidden="true"
-    >
-      304
-    </div>
+  <body class="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-sans antialiased flex flex-col justify-between overflow-x-hidden">
+    <!-- Barre d'accentuation Blaugrana subtile en haut de page -->
+    <div class="h-1 w-full bg-gradient-to-r from-[#004D98] via-[#004D98] to-[#A50044] sticky top-0 z-50"></div>
 
     <div class="relative z-10 flex flex-col flex-1">
       <slot />
     </div>
 
-    <!-- Pied de page brutaliste -->
-    <footer class="relative z-10 border-t border-border-bitume bg-bitume-surface mt-24 py-8 px-4 text-xs font-mono">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <span class="stamp-304 text-xs">ROCAFONDA 08304</span>
-          <span class="text-craie-muted">Fanzine éditorial non officiel dédié au prodige Lamine Yamal.</span>
+    <!-- Pied de page épuré & professionnel -->
+    <footer class="relative z-10 border-t border-[#E2E8F0] bg-white mt-20 py-10 px-4 md:px-8 text-xs text-[#64748B]">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded bg-[#004D98] text-white font-bold text-xs">
+              19
+            </span>
+            <span class="font-semibold text-[#0F172A] text-sm">Lamine Yamal Analytics</span>
+          </div>
+          <span class="hidden sm:inline text-[#CBD5E1]">|</span>
+          <span class="text-[#64748B]">Données de performance et cartographie balistique inspirées de l'identité du FC Barcelone.</span>
         </div>
-        <div class="flex items-center gap-6 text-craie-dim">
-          <span>100% SSG ASTRO</span>
+        
+        <div class="flex flex-wrap items-center justify-center gap-6 text-[#64748B]">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Architecture 100% Statique (SSG)
+          </span>
           <span>•</span>
-          <span class="text-chasuble">0 REQUÊTE CLIENT</span>
+          <span>Zéro requête client</span>
           <span>•</span>
-          <span>LICENCE LIBRE</span>
+          <span class="text-[#004D98] font-medium">#ViscaBarça</span>
         </div>
       </div>
     </footer>

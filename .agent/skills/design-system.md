@@ -1,60 +1,66 @@
-# Skill : Direction Artistique & Design System Brutaliste Urbain (304)
+# Skill : Direction Artistique & Design System Analytique Barça Moderne
 
 ## Objectif
-Définir et appliquer sans déviation l'identité visuelle du projet Lamine Yamal : un fanzine de football brutaliste urbain, ancré dans l'authenticité de Rocafonda et du football de rue catalan.
+Définir et appliquer sans déviation l'identité visuelle de la plateforme Lamine Yamal : une interface de statistiques sportive moderne, lumineuse, épurée et haut de gamme, inspirée de l'identité du **FC Barcelone** et des standards professionnels (Sofascore, FBref, Transfermarkt moderne).
 
 ---
 
-## 1. Interdictions Strictes (Anti-Template IA)
+## 1. Principes Fondamentaux de Design
 
-- **ZÉRO Glassmorphism** : Aucun fond flouté en verre dépoli (`backdrop-blur` avec transparence laiteuse).
-- **ZÉRO Dégradés Pastel Génériques** : Interdiction absolue des gradients pourpre/rose/cyan façon landing page SaaS ou template IA générique.
-- **ZÉRO Ombres Diffuses Molles** : Pas de `box-shadow` floues type `shadow-2xl` sans découpe nette.
-- **ZÉRO Bords Excessivement Arrondis** : Pas d'éléments en `rounded-3xl` ou `rounded-full` sur les cartes principales ; privilégier les angles vifs (`rounded-none` ou `rounded-xs`/`rounded-sm` maximal) pour accentuer la rudesse éditoriale.
-
----
-
-## 2. Palette Chromatique Identitaire
-
-| Token | Teinte / Hex | Rôle & Usage |
-| :--- | :--- | :--- |
-| **Bitume** | `#0D0E12` | Arrière-plan structurel principal, sombre, brut et texturé |
-| **Craie** | `#F2F2F0` | Titres majeurs, typographies à fort contraste, blanc cassé d'affiche |
-| **Bleu Catalan** | `#004D98` | Délimitations tranchantes, rubans graphiques, badges |
-| **Grenat Catalan** | `#A50044` | Contrastes puissants, sections chaudes, accents club |
-| **Jaune Chasuble** | `#E2F163` | Surlignages fluo, micro-détails, stats clés, marqueurs d'impact |
-| **Gris Asphalte** | `#1C1E24` | Surfaces de conteneurs, encadrés techniques, séparateurs secondaires |
-| **Bordure Bitume** | `#2A2D35` | Lignes de grille nettes de 1px ou 2px |
+- **Ambiance Lumineuse & Aérée** : Espacements généreux (*whitespace*), structure claire, respiration visuelle entre les blocs de données.
+- **Bordures Fines & Précises** : Séparations discrètes de 1px en `#E2E8F0` ou `#CBD5E1`, pas de contours baveux ou d'ombres portées agressives.
+- **Fonds Hiérarchisés** :
+  - Fond de base / alternance : Gris très clair subtil (`#F8FAFC` ou `#F1F5F9`).
+  - Surfaces actives et cartes : Blanc pur (`#FFFFFF`) avec ombres douces et subtiles (`shadow-sm` / `shadow-md`).
+- **Zéro Surcharge Visuelle** : Pas de déformations brutales, pas de textures sales ni de typographies criardes.
 
 ---
 
-## 3. Typographies & Hiérarchie
+## 2. Palette Chromatique Officielle FC Barcelone
 
-- **Titres & Numérotations de choc** :
-  - Familles : *Bebas Neue*, *Syne* ou polices ultra-condensées sans-serif majuscules.
-  - Caractéristiques : `uppercase`, `tracking-tight`, interlettrage dense, graisse `font-black` ou `font-bold`.
-- **Corps de texte & Données statistiques** :
-  - Familles : *Geist*, *Inter*, *JetBrains Mono* (pour les métriques, minutes et coordonnées).
-  - Caractéristiques : lisibilité maximale, contraste franc avec le fond bitume.
-
----
-
-## 4. Motif Identitaire « 304 » (Rocafonda)
-
-Le nombre **304** (derniers chiffres du code postal 08304 de Rocafonda à Mataró, symbole du geste de célébration de Lamine Yamal) doit être incorporé systématiquement :
-- En filigrane vectoriel géant à faible opacité (ex. `opacity-5` à `opacity-10`) dans les arrière-plans de sections.
-- En marquage technique de bord de page ou tampon « STAMP 304 / MATARÓ ».
-- Dans les numérotations d'items, de cartes de buts et d'indices de records.
-- Dans les séparateurs de sections (ex: `/// 304 ///`).
+| Rôle | Token | Valeur Hex | Utilisation & Guide |
+| :--- | :--- | :--- | :--- |
+| **Bleu Profond (Deep Blau)** | `barca-blau` | `#004D98` | Titres principaux, navigation active, bordures d'accent, liens clés |
+| **Grenat Catalan (Blaugrana Red)** | `barca-grana` | `#A50044` | Boutons d'action prioritaires, points d'impact Butoscope, badges d'état |
+| **Or Discret (Gold Accent)** | `barca-gold` | `#EDBB00` / `#D4AF37` | Trophées majeurs, étoiles de records, distinctions individuelles |
+| **Surface Fond** | `surface-page` | `#F8FAFC` | Arrière-plan général aéré et lumineux |
+| **Surface Cartes** | `surface-card` | `#FFFFFF` | Conteneurs statistiques, fiches tactiques, lignes de tableau |
+| **Titre & Chiffres forts** | `text-primary` | `#0F172A` | Nombres clés, têtes de chapitre, intitulés |
+| **Sous-titres & Libellés** | `text-secondary` | `#475569` | Unités, métadonnées, descriptions courtes |
+| **Mentions légères** | `text-muted` | `#64748B` | Dates secondaires, coordonnées, labels techniques |
+| **Bordures Fines** | `border-subtle` | `#E2E8F0` | Délimitations discrètes de cartes, tableaux et séparateurs |
 
 ---
 
-## 5. Composants Graphiques Clés
+## 3. Typographie Moderne & Lisible
 
-- **Cartes Brutalistes** :
-  - Bordures nettes de 1px ou 2px (`border border-[#2A2D35]`).
-  - Ombres portées dures décalées si nécessaire (`shadow-[4px_4px_0px_0px_#E2F163]` ou `shadow-[3px_3px_0px_0px_#004D98]`).
-  - Badges à effet "étiquette industrielle" ou "billet de match vintage".
-- **Boutons & Éléments Interactifs** :
-  - Hover dynamique avec inversion de contraste franche (ex: fond passant instantanément au jaune `#E2F163` avec texte `#0D0E12`).
-  - Effets de glitch ou de translation rigide (offset de 2px).
+- **Police unique sans-serif** : `Inter` (ou police système moderne sans-serif équivalente).
+- **Chiffres Tabulaires** : Application de `font-variant-numeric: tabular-nums` (`tabular-nums` Tailwind) sur toutes les statistiques pour un alignement vertical parfait des données.
+- **Hiérarchie Typographique** :
+  - **H1 (Hero)** : `font-bold` ou `font-extrabold`, `tracking-tight`, couleur `#0F172A` rehaussée de touches `#004D98`.
+  - **H2 / H3 (Titres de section & cartes)** : `font-semibold` ou `font-bold`, lisibilité directe, casse naturelle ou majuscules sobres sans effet d'étirement.
+  - **Statistiques & Métriques** : Chiffres nets en bleu Barça (`#004D98`), contrastant avec des libellés grisés (`#475569`).
+
+---
+
+## 4. Règles de Conception des Composants
+
+### A. Section Hero
+- Présentation sobre, institutionnelle et statutaire (style portail officiel / fiche Sofascore U21).
+- Cartes de statistiques clés en fond blanc (`#FFFFFF`), bordure fine grise (`#E2E8F0`), chiffres géants nets en bleu Barça (`#004D98`) et libellés grisés.
+- Intégration sobre de la photo/silhouette officielle du joueur et calcul automatique de l'âge exact en temps réel.
+
+### B. Le Butoscope
+- **Terrain de Football** : Vert gazon pastel très doux et épuré (`#F0FDF4` / `#DCFCE7` avec lignes techniques fines) ou schéma analytique minimaliste gris clair / bleu nuit.
+- **Points d'impact des buts** : Pastilles nettes en grenat catalan (`#A50044`) bordées d'un anneau blanc pur (`ring-2 ring-white`), cliquables et survolables.
+- **Fiche Tactique** : Panneau blanc moderne avec bordure fine, métriques alignées (distance, angle, xG, minute, passeur) et façade vidéo sobre sans iframe intempestive.
+
+### C. Tableaux et Listes de Données
+- Tableau de statistiques ultra-lisible, triable et paginé proprement.
+- Alternance de lignes subtile : blanc pur (`#FFFFFF`) et gris très clair (`#F8FAFC`).
+- Badges de compétitions et de clubs compacts, alignés avec précision.
+- Filtres rapides épurés sous forme de pilules modernes (boutons arrondis blancs avec état actif bleu Barça ou grenat).
+
+### D. Vitrine des Trophées
+- Cartes minimalistes blanches rehaussées d'une bordure fine dorée (`#EDBB00`) et d'un liseré supérieur élégant.
+- Icônes vectorielles nettes et dorées, typographie soignée et badges d'équipe (FC Barcelone / Espagne) immédiatement identifiables.

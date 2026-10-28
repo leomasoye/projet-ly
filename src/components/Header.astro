@@ -4,48 +4,62 @@ import { getPlayerProfile } from '../lib/data-validator';
 const player = getPlayerProfile();
 ---
 
-<header class="sticky top-0 z-50 bg-bitume/90 backdrop-blur-none border-b border-border-bitume py-3 px-4 md:px-8">
+<header class="sticky top-1 z-40 bg-white/90 backdrop-blur-md border-b border-[#E2E8F0] py-3.5 px-4 md:px-8 shadow-xs">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
-    <!-- Marqueur Identitaire -->
+    
+    <!-- Marqueur Identitaire / Logo Joueur -->
     <a href="/" class="flex items-center gap-3 group">
-      <div class="bg-chasuble text-bitume font-display text-xl px-2 py-0.5 tracking-wider font-black group-hover:bg-craie transition-colors">
-        304
+      <!-- Badge Club / Monogramme -->
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-[#004D98] to-[#00366b] flex items-center justify-center text-white font-bold text-sm shadow-xs border border-[#004D98]/20 group-hover:scale-105 transition-transform">
+        <span class="text-[#EDBB00] font-black text-xs">#</span>{player.jerseyNumber}
       </div>
       <div class="flex flex-col">
-        <span class="font-display tracking-wider text-base text-craie leading-none uppercase">
-          LAMINE YAMAL
-        </span>
-        <span class="font-mono text-[10px] text-craie-muted tracking-widest leading-none mt-1">
-          ROCAFONDA • ARCHIVE
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-base text-[#0F172A] tracking-tight group-hover:text-[#004D98] transition-colors">
+            {player.shortName}
+          </span>
+          <span class="text-[11px] font-semibold text-[#A50044] bg-[#fdf2f5] px-1.5 py-0.5 rounded border border-[#A50044]/15">
+            FCB
+          </span>
+        </div>
+        <span class="text-xs text-[#64748B] font-normal leading-tight">
+          Centre de Statistiques & Analyse
         </span>
       </div>
     </a>
 
-    <!-- Navigation Rapide -->
-    <nav class="hidden md:flex items-center gap-6 font-mono text-xs uppercase tracking-wider">
-      <a href="#butoscope" class="text-craie-muted hover:text-chasuble transition-colors py-1">
-        [01] Le Butoscope
+    <!-- Navigation Moderne Épurée -->
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-[#475569]">
+      <a href="#butoscope" class="hover:text-[#004D98] transition-colors py-1 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#004D98]/40"></span>
+        Le Butoscope
       </a>
-      <a href="#records" class="text-craie-muted hover:text-chasuble transition-colors py-1">
-        [02] Records de Précocité
+      <a href="#buts" class="hover:text-[#004D98] transition-colors py-1 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#004D98]/40"></span>
+        Registre des Buts
       </a>
-      <a href="#buts" class="text-craie-muted hover:text-chasuble transition-colors py-1">
-        [03] Chronologie des Buts
+      <a href="#records" class="hover:text-[#004D98] transition-colors py-1 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#004D98]/40"></span>
+        Records
       </a>
-      <a href="#palmares" class="text-craie-muted hover:text-chasuble transition-colors py-1">
-        [04] Palmarès
+      <a href="#palmares" class="hover:text-[#004D98] transition-colors py-1 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#004D98]/40"></span>
+        Palmarès
       </a>
     </nav>
 
-    <!-- Statut en Direct -->
-    <div class="flex items-center gap-2 border border-border-bitume bg-bitume-surface px-3 py-1 font-mono text-xs">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-chasuble opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-chasuble"></span>
-      </span>
-      <span class="text-craie uppercase text-[11px] font-bold">EN ACTIVITÉ</span>
-      <span class="text-craie-dim">|</span>
-      <span class="text-catalan-blau font-bold">#{player.jerseyNumber}</span>
+    <!-- Statut Officiel Sofascore Style -->
+    <div class="flex items-center gap-3">
+      <div class="inline-flex items-center gap-2 bg-[#F8FAFC] border border-[#E2E8F0] px-3 py-1.5 rounded-full text-xs">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="text-[#0F172A] font-semibold">Saison 24/25</span>
+        <span class="text-[#CBD5E1]">|</span>
+        <span class="text-[#004D98] font-bold">Ailier Droit</span>
+      </div>
     </div>
+
   </div>
 </header>
