@@ -2,9 +2,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   YamalStatsFileSchema,
-  type Goal,
   type YamalStatsData,
 } from '../src/types';
+
+// Chargement automatique d'un fichier .env local si présent (Node 20+)
+if (typeof process.loadEnvFile === 'function' && fs.existsSync(path.resolve(process.cwd(), '.env'))) {
+  try {
+    process.loadEnvFile();
+  } catch (e) {
+    // Fichier .env ignoré s'il ne peut être chargé
+  }
+}
 
 /**
  * Normalise le nom de la compétition reçue depuis l'API vers le schéma GoalCompetition.
@@ -47,13 +55,13 @@ export function generateGoalId(opponent: string, date: string, minute: number): 
 }
 
 async function main() {
-  console.log('/// ROCAFONDA ARCHIVE — SCRIPT D\'INGESTION DES STATISTIQUES ///');
+  console.log('/// BARÇA STATS ANALYTICS — SCRIPT D\'INGESTION DES STATISTIQUES ///');
 
-  // 1. VÉRIFICATION STRICTE DE LA SÉCURITÉ
+  // 1. VÉRIFICATION DE LA CLÉ API
   const apiKey = process.env.FOOTBALL_API_KEY;
   if (!apiKey || apiKey.trim() === '') {
     throw new Error(
-      '[SÉCURITÉ VIOLEE] La variable d\'environnement \'FOOTBALL_API_KEY\' est strictement obligatoire pour lancer l\'ingestion des données. Définissez FOOTBALL_API_KEY dans votre environnement ou les secrets GitHub Actions.'
+      '[SÉCURITÉ] La variable d\'environnement \'FOOTBALL_API_KEY\' est obligatoire pour lancer l\'ingestion des données. Définissez FOOTBALL_API_KEY dans votre fichier .env ou les secrets GitHub Actions.'
     );
   }
 
@@ -78,135 +86,116 @@ async function main() {
     throw new Error(`Le fichier actuel data/yamal-stats.json est corrompu : ${(err as Error).message}`);
   }
 
-  console.log(`✓ Données actuelles chargées : ${currentData.goals.length} buts, ${currentData.records.length} records.`);
+  console.log(`✓ Données actuelles chargées : ${currentData.goals.length} buts répertoriés, ${currentData.records.length} records.`);
 
-  // 3. INTERROGATION SÉCURISÉE DE L'API FOOTBALL
-  // ID joueur Lamine Yamal (API-Football : 380061, Équipe Barcelone : 529)
-  const provider = process.env.FOOTBALL_API_PROVIDER || 'api-football';
-  const currentYear = new Date().getFullYear();
+  // 3. INTERROGATION SÉCURISÉE DE L'API FOOTBALL (v3.football.api-sports.io)
+  // ID joueur Lamine Yamal : 380061 (FC Barcelone : 529)
+  const baseUrl = process.env.FOOTBALL_API_BASE_URL || 'https://v3.football.api-sports.io';
+  
+  // Headers compatibles avec API-Sports direct et RapidAPI
+  const headers: Record<string, string> = {
+    'x-apisports-key': apiKey.trim(),
+  };
+  if (apiKey.trim().length > 35) {
+    headers['x-rapidapi-key'] = apiKey.trim();
+    headers['x-rapidapi-host'] = 'v3.football.api-sports.io';
+  }
 
-  let fetchedGoals: Goal[] = [];
+  // Saisons actives de la carrière professionnelle de Lamine Yamal (début en 2023)
+  const now = new Date();
+  const currentSeasonYear = now.getMonth() >= 6 ? now.getFullYear() : now.getFullYear() - 1;
+  const seasonsToFetch: number[] = [];
+  for (let s = 2023; s <= Math.max(2024, currentSeasonYear); s++) {
+    seasonsToFetch.push(s);
+  }
 
-  try {
-    if (provider === 'api-football') {
-      console.log(`[API] Interrogation de l'API-Football pour Lamine Yamal (Saison ${currentYear})...`);
+  console.log(`[API] Interrogation de ${baseUrl} pour Lamine Yamal (ID 380061) sur les saisons [${seasonsToFetch.join(', ')}]...`);
 
-      const url = `https://v3.football.api-sports.io/players?id=380061&season=${currentYear}`;
-      const response = await fetch(url, {
-        headers: {
-          'x-apisports-key': apiKey,
-        },
-      });
+  let careerGoals = 0;
+  let careerAssists = 0;
+  let careerMatches = 0;
+  let apiSuccessCount = 0;
+
+  for (const season of seasonsToFetch) {
+    try {
+      const url = `${baseUrl}/players?id=380061&season=${season}`;
+      console.log(`  → Requête saison ${season}...`);
+      
+      const response = await fetch(url, { headers });
 
       if (response.status === 429) {
-        console.warn('⚠️ Quota d\'appels API dépassé (HTTP 429). Aucune donnée locale n\'a été altérée.');
-        process.exit(0);
+        console.warn('⚠️ Quota d\'appels API journalier atteint (HTTP 429). Données locales préservées.');
+        break;
       }
 
       if (!response.ok) {
-        console.warn(`⚠️ Erreur serveur API (HTTP ${response.status} : ${response.statusText}). Données locales préservées.`);
-        process.exit(0);
+        console.warn(`⚠️ Réponse serveur API (HTTP ${response.status} : ${response.statusText}) pour la saison ${season}.`);
+        continue;
       }
 
       const payload = await response.json() as {
-        errors?: unknown[];
+        errors?: Record<string, string> | unknown[];
         response?: Array<{
+          player?: { name?: string; firstname?: string; lastname?: string };
           statistics?: Array<{
             team?: { name?: string };
             league?: { name?: string };
-            goals?: { total?: number; assists?: number };
-            games?: { appearences?: number };
+            goals?: { total?: number | null; assists?: number | null };
+            games?: { appearences?: number | null };
           }>;
         }>;
       };
 
-      if (payload.errors && Array.isArray(payload.errors) && payload.errors.length > 0) {
+      if (payload.errors && Object.keys(payload.errors).length > 0) {
         console.warn('⚠️ L\'API a renvoyé des erreurs métier :', payload.errors);
-        process.exit(0);
+        continue;
       }
 
-      // Traitement des statistiques globales
-      const statsArray = payload.response?.[0]?.statistics || [];
-      let totalGoalsFound = 0;
-      let totalAssistsFound = 0;
-      let totalMatchesFound = 0;
-
-      for (const st of statsArray) {
-        totalGoalsFound += st.goals?.total || 0;
-        totalAssistsFound += st.goals?.assists || 0;
-        totalMatchesFound += st.games?.appearences || 0;
+      const playerEntry = payload.response?.[0];
+      if (playerEntry && Array.isArray(playerEntry.statistics)) {
+        apiSuccessCount++;
+        for (const st of playerEntry.statistics) {
+          careerGoals += st.goals?.total || 0;
+          careerAssists += st.goals?.assists || 0;
+          careerMatches += st.games?.appearences || 0;
+        }
       }
-
-      console.log(`✓ Données reçues : ${totalGoalsFound} buts saisonniers, ${totalAssistsFound} passes.`);
-      
-      // Mise à jour de l'aperçu si données supérieures
-      if (totalGoalsFound > 0 && totalGoalsFound >= currentData.statsOverview.totalGoals) {
-        currentData.statsOverview.totalGoals = totalGoalsFound;
-      }
-      if (totalAssistsFound > 0 && totalAssistsFound >= currentData.statsOverview.totalAssists) {
-        currentData.statsOverview.totalAssists = totalAssistsFound;
-      }
-      if (totalMatchesFound > 0 && totalMatchesFound >= currentData.statsOverview.totalMatches) {
-        currentData.statsOverview.totalMatches = totalMatchesFound;
-      }
-
-    } else {
-      console.log(`[API] Fournisseur '${provider}' non configuré, saut de l'appel externe.`);
-    }
-  } catch (apiError) {
-    console.error(`⚠️ Exception réseau lors de l'appel API : ${(apiError as Error).message}`);
-    console.log('Les données locales existantes restent intactes.');
-    process.exit(0);
-  }
-
-  // 4. FUSION INTELLIGENTE (MERGE SÉCURISÉ)
-  // RÈGLE ABSOLUE : Préserver toutes les métadonnées manuelles (coordonnées x/y, videoId, descriptions)
-  const existingGoalsMap = new Map<string, Goal>();
-  for (const goal of currentData.goals) {
-    existingGoalsMap.set(goal.id, goal);
-  }
-
-  let newGoalsCount = 0;
-  for (const fetched of fetchedGoals) {
-    if (existingGoalsMap.has(fetched.id)) {
-      // Le but existe déjà : ON PRÉSERVE l'enrichissement manuel Butoscope et vidéo
-      const existing = existingGoalsMap.get(fetched.id)!;
-      existingGoalsMap.set(fetched.id, {
-        ...fetched,
-        coordinates: existing.coordinates, // Inviolable
-        videoId: existing.videoId,         // Inviolable
-        videoUrl: existing.videoUrl,       // Inviolable
-        description: existing.description, // Inviolable
-        importance: existing.importance,   // Inviolable
-        tags: existing.tags,
-      });
-    } else {
-      // Nouveau but détecté
-      existingGoalsMap.set(fetched.id, fetched);
-      newGoalsCount++;
+    } catch (seasonErr) {
+      console.warn(`⚠️ Erreur réseau lors de la récupération de la saison ${season} : ${(seasonErr as Error).message}`);
     }
   }
 
-  // 5. MISE À JOUR DE LA DATE ET VALIDATION ZOD COMPLÈTE
+  // 4. MISE À JOUR DES STATISTIQUES GLOBALES
+  if (apiSuccessCount > 0 && careerGoals > 0) {
+    console.log(`✓ Statistiques de carrière cumulées reçues : ${careerGoals} buts, ${careerAssists} passes décisives en ${careerMatches} apparitions.`);
+    
+    // Mise à jour si supérieur ou égal aux données stockées
+    currentData.statsOverview.totalGoals = Math.max(currentData.statsOverview.totalGoals, careerGoals);
+    currentData.statsOverview.totalAssists = Math.max(currentData.statsOverview.totalAssists, careerAssists);
+    currentData.statsOverview.totalMatches = Math.max(currentData.statsOverview.totalMatches, careerMatches);
+  } else {
+    console.log('ℹ️ Aucune nouvelle donnée supérieure trouvée ou quota API atteint. Données de référence conservées.');
+  }
+
+  // 5. MISE À JOUR DE LA DATE ET VALIDATION ZOD
   const today = new Date().toISOString().split('T')[0];
   currentData.statsOverview.lastUpdated = today;
-  currentData.goals = Array.from(existingGoalsMap.values());
 
   const validationResult = YamalStatsFileSchema.safeParse(currentData);
   if (!validationResult.success) {
-    console.error('❌ Échec de la validation Zod après tentative de fusion :');
+    console.error('❌ Échec de la validation Zod :');
     console.error(validationResult.error.issues);
     throw new Error('Les nouvelles données fusionnées sont invalides. Écriture annulée.');
   }
 
-  // 6. ÉCRITURE ATOMIQUE
+  // 6. ÉCRITURE DANS data/yamal-stats.json
   fs.writeFileSync(
     dataFilePath,
     JSON.stringify(validationResult.data, null, 2) + '\n',
     'utf-8'
   );
 
-  console.log(`✅ Traitement terminé avec succès. ${newGoalsCount} nouveau(x) but(s) ajouté(s). Date MAJ : ${today}`);
+  console.log(`✅ Synchronisation terminée avec succès. Dernière mise à jour enregistrée : ${today}`);
 }
 
 main().catch((err) => {
