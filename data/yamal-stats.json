@@ -15,8 +15,8 @@
     "totalGoals": 70,
     "totalAssists": 67,
     "totalMatches": 201,
-    "totalTrophies": 10,
-    "totalRecords": 7,
+    "totalTrophies": 8,
+    "totalRecords": 13,
     "lastUpdated": "2026-10-28"
   },
   "goals": [
@@ -1290,9 +1290,20 @@
       "year": 2024,
       "team": "FC Barcelone",
       "category": "Individuel",
-      "role": "Élu à l'unanimité meilleur joueur U21 de la planète par le collège électoral composé des anciens lauréats du Ballon d'Or.",
+      "role": "Élu à l'unanimité meilleur joueur U21 du monde par le jury prestigieux des anciens lauréats du Ballon d'Or.",
       "visual": "/images/trophies/kopa-2024.svg",
-      "highlight": "Plus jeune lauréat de l'histoire du Trophée Kopa à 17 ans et 107 jours, se classant également 8e au classement général du Ballon d'Or."
+      "highlight": "Plus jeune lauréat de l'histoire du Trophée Kopa à 17 ans et 107 jours, classé également 8e au Ballon d'Or mondial."
+    },
+    {
+      "id": "trophy-golden-boy-2024",
+      "title": "Golden Boy 2024",
+      "competition": "Tuttosport",
+      "year": 2024,
+      "team": "FC Barcelone",
+      "category": "Individuel",
+      "role": "Couronné meilleur jeune joueur d'Europe des moins de 21 ans avec un plébiscite historique des journalistes sportifs internationaux.",
+      "visual": "/images/trophies/golden-boy-2024.svg",
+      "highlight": "Plus large écart de voix jamais enregistré dans l'histoire de la distinction."
     },
     {
       "id": "trophy-liga-2023",
@@ -1306,6 +1317,28 @@
       "highlight": "Plus jeune joueur du XXIe siècle à inscrire son nom au palmarès du championnat d'Espagne."
     },
     {
+      "id": "trophy-copa-2025",
+      "title": "Vainqueur de la Coupe du Roi",
+      "competition": "Copa del Rey",
+      "year": 2025,
+      "team": "FC Barcelone",
+      "category": "Collectif",
+      "role": "Meneur offensif décisif tout au long du parcours jusqu'au sacre national conquis avec le Barça.",
+      "visual": "/images/trophies/copa-2025.svg",
+      "highlight": "Deuxième trophée national majeur conquis avec le club catalan."
+    },
+    {
+      "id": "trophy-supercopa-2025",
+      "title": "Vainqueur de la Supercoupe d'Espagne",
+      "competition": "Supercopa de España",
+      "year": 2025,
+      "team": "FC Barcelone",
+      "category": "Collectif",
+      "role": "Buteur en demi-finale et titulaire lors du sacre conquis face aux cadors de la péninsule ibérique.",
+      "visual": "/images/trophies/supercopa-2025.svg",
+      "highlight": "Auteur de buts décisifs lors des matchs éliminatoires à élimination directe."
+    },
+    {
       "id": "trophy-euro-best-young-2024",
       "title": "Meilleur Jeune Joueur de l'Euro 2024",
       "competition": "UEFA Euro 2024",
@@ -1315,22 +1348,89 @@
       "role": "Désigné par les observateurs techniques de l'UEFA au terme d'une campagne record (1 but, 4 passes décisives, 19 occasions créées).",
       "visual": "/images/trophies/euro-young-2024.svg",
       "highlight": "Premier joueur mineur de l'histoire à remporter cette distinction dans un tournoi majeur."
+    },
+    {
+      "id": "trophy-euro-goal-tournament-2024",
+      "title": "But du Tournoi de l'Euro 2024",
+      "competition": "UEFA Euro 2024",
+      "year": 2024,
+      "team": "Espagne",
+      "category": "Individuel",
+      "role": "Élu plus beau but de toute l'édition pour sa frappe supersonique des 25 mètres poteau rentrant contre la France.",
+      "visual": "/images/trophies/goal-tournament-2024.svg",
+      "highlight": "Élu à l'unanimité par le panel d'experts de l'UEFA et plébiscité par les fans."
     }
   ],
   "records": [
     {
-      "id": "record-youngest-euro-scorer",
-      "title": "Plus jeune buteur de l'histoire du Championnat d'Europe",
-      "competition": "UEFA Euro",
-      "date": "2024-07-09",
+      "id": "record-youngest-barca-debut",
+      "title": "Plus jeune joueur de l'histoire du Barça en match officiel",
+      "competition": "La Liga",
+      "date": "2023-04-29",
       "exactAge": {
-        "years": 16,
-        "days": 362
+        "years": 15,
+        "days": 290
       },
       "status": "détenu",
-      "matchContext": "Espagne 2-1 France (Allianz Arena, Munich - Demi-finale)",
-      "previousHolder": "Johan Vonlanthen (18 ans et 141 jours en 2004)",
-      "description": "Frappe enroulée monumentale de 25 mètres trouvant la lucarne de Mike Maignan avec l'aide du poteau."
+      "matchContext": "FC Barcelone 4-0 Real Betis (Spotify Camp Nou)",
+      "previousHolder": "Armand Martínez Sagi (15 ans et 335 jours en 1922)",
+      "description": "Entrée en jeu historique sous Xavi à 15 ans, 9 mois et 16 jours sous l'ovation debout du Camp Nou."
+    },
+    {
+      "id": "record-youngest-liga-starter",
+      "title": "Plus jeune titulaire de l'histoire de la Liga",
+      "competition": "La Liga",
+      "date": "2023-08-20",
+      "exactAge": {
+        "years": 16,
+        "days": 38
+      },
+      "status": "détenu",
+      "matchContext": "FC Barcelone 2-0 Cadix CF (Stade de Montjuïc)",
+      "previousHolder": "Fabrice Olinga (16 ans et 112 jours en 2012)",
+      "description": "Première titularisation en championnat d'Espagne, dynamitant le couloir droit pendant 85 minutes."
+    },
+    {
+      "id": "record-youngest-liga-assist",
+      "title": "Plus jeune passeur décisif de l'histoire de la Liga",
+      "competition": "La Liga",
+      "date": "2023-08-27",
+      "exactAge": {
+        "years": 16,
+        "days": 45
+      },
+      "status": "détenu",
+      "matchContext": "Villarreal CF 3-4 FC Barcelone (Stade de la Céramique)",
+      "previousHolder": "Ansu Fati (16 ans et 318 jours en 2019)",
+      "description": "Centre parfait pour la tête de Gavi et élu Homme du Match dans une rencontre anthologique."
+    },
+    {
+      "id": "record-youngest-spain-debut-scorer",
+      "title": "Plus jeune joueur et buteur de l'histoire de la Roja",
+      "competition": "Éliminatoires Euro",
+      "date": "2023-09-08",
+      "exactAge": {
+        "years": 16,
+        "days": 57
+      },
+      "status": "détenu",
+      "matchContext": "Géorgie 1-7 Espagne (Boris Paichadze Arena, Tbilissi)",
+      "previousHolder": "Gavi (17 ans et 62 jours aux débuts, 17 ans et 304 jours au but)",
+      "description": "Double record de précocité pulvérisé dès sa première sélection senior sous Luis de la Fuente."
+    },
+    {
+      "id": "record-youngest-ucl-starter",
+      "title": "Plus jeune joueur titulaire de l'histoire de la Ligue des Champions",
+      "competition": "Ligue des Champions",
+      "date": "2023-10-04",
+      "exactAge": {
+        "years": 16,
+        "days": 83
+      },
+      "status": "détenu",
+      "matchContext": "FC Porto 0-1 FC Barcelone (Estádio do Dragão)",
+      "previousHolder": "Celestine Babayaro (16 ans et 86 jours en 1994)",
+      "description": "Titularisé sur l'aile droite à Porto en phase de groupes de la prestigieuse C1."
     },
     {
       "id": "record-youngest-liga-scorer",
@@ -1347,18 +1447,46 @@
       "description": "Reprise de près sur un service de João Félix brisant un record qui tenait depuis plus d'une décennie."
     },
     {
-      "id": "record-youngest-clasico-scorer",
-      "title": "Plus jeune buteur de l'histoire du Clásico",
-      "competition": "La Liga",
-      "date": "2024-10-26",
+      "id": "record-youngest-ucl-assist",
+      "title": "Plus jeune passeur décisif de l'histoire de la C1",
+      "competition": "Ligue des Champions",
+      "date": "2023-12-13",
       "exactAge": {
-        "years": 17,
-        "days": 105
+        "years": 16,
+        "days": 153
       },
       "status": "détenu",
-      "matchContext": "Real Madrid 0-4 FC Barcelone (Santiago Bernabéu)",
-      "previousHolder": "Ansu Fati (17 ans et 359 jours en 2020)",
-      "description": "Missile du pied droit sous la transversale d'Andriy Lunin suivi de la célébration 304 au Bernabéu."
+      "matchContext": "Royal Antwerp 3-2 FC Barcelone (Bosuilstadion)",
+      "previousHolder": "Rayan Cherki (17 ans et 4 jours en 2020)",
+      "description": "Passe décisive millimétrée pour Ferran Torres sur la scène européenne."
+    },
+    {
+      "id": "record-youngest-euro-debut",
+      "title": "Plus jeune joueur et passeur de l'histoire de l'Euro",
+      "competition": "UEFA Euro",
+      "date": "2024-06-15",
+      "exactAge": {
+        "years": 16,
+        "days": 338
+      },
+      "status": "détenu",
+      "matchContext": "Espagne 3-0 Croatie (Olympiastadion, Berlin)",
+      "previousHolder": "Kacper Kozłowski (17 ans et 246 jours en 2021)",
+      "description": "Titulaire d'entrée de compétition et passeur décisif magistral pour Dani Carvajal."
+    },
+    {
+      "id": "record-youngest-euro-scorer",
+      "title": "Plus jeune buteur de l'histoire du Championnat d'Europe",
+      "competition": "UEFA Euro",
+      "date": "2024-07-09",
+      "exactAge": {
+        "years": 16,
+        "days": 362
+      },
+      "status": "détenu",
+      "matchContext": "Espagne 2-1 France (Allianz Arena, Munich - Demi-finale)",
+      "previousHolder": "Johan Vonlanthen (18 ans et 141 jours en 2004)",
+      "description": "Frappe enroulée monumentale de 25 mètres trouvant la lucarne de Mike Maignan avec l'aide du poteau."
     },
     {
       "id": "record-youngest-euro-winner",
@@ -1375,18 +1503,18 @@
       "description": "Titulaire et auteur de la passe décisive d'ouverture pour Nico Williams au lendemain de son 17e anniversaire."
     },
     {
-      "id": "record-youngest-spain-debut-scorer",
-      "title": "Plus jeune joueur et buteur de l'histoire de la sélection espagnole",
-      "competition": "Éliminatoires Euro",
-      "date": "2023-09-08",
+      "id": "record-youngest-clasico-scorer",
+      "title": "Plus jeune buteur de l'histoire du Clásico",
+      "competition": "La Liga",
+      "date": "2024-10-26",
       "exactAge": {
-        "years": 16,
-        "days": 57
+        "years": 17,
+        "days": 105
       },
       "status": "détenu",
-      "matchContext": "Géorgie 1-7 Espagne (Boris Paichadze Dinamo Arena, Tbilissi)",
-      "previousHolder": "Gavi (17 ans et 62 jours aux débuts, 17 ans et 304 jours au but)",
-      "description": "Double record de précocité battu dès sa première entrée en jeu en sélection senior."
+      "matchContext": "Real Madrid 0-4 FC Barcelone (Santiago Bernabéu)",
+      "previousHolder": "Ansu Fati (17 ans et 359 jours en 2020)",
+      "description": "Missile du pied droit sous la transversale d'Andriy Lunin suivi de la célébration 304 au Bernabéu."
     },
     {
       "id": "record-youngest-kopa-winner",
@@ -1403,18 +1531,18 @@
       "description": "Consécration mondiale absolue en tant que meilleur jeune joueur du football international."
     },
     {
-      "id": "record-youngest-ucl-starter",
-      "title": "Plus jeune joueur titulaire de l'histoire de la Ligue des Champions",
-      "competition": "Ligue des Champions",
-      "date": "2023-10-04",
+      "id": "record-youngest-barca-100-games",
+      "title": "Plus jeune joueur du FC Barcelone à atteindre 100 matchs",
+      "competition": "FC Barcelone",
+      "date": "2025-05-18",
       "exactAge": {
-        "years": 16,
-        "days": 83
+        "years": 17,
+        "days": 309
       },
       "status": "détenu",
-      "matchContext": "FC Porto 0-1 FC Barcelone (Estádio do Dragão)",
-      "previousHolder": "Celestine Babayaro (16 ans et 86 jours en 1994)",
-      "description": "Titularisé sur l'aile droite à Porto en phase de groupes de la C1."
+      "matchContext": "FC Barcelone (Toutes compétitions confondues)",
+      "previousHolder": "Bojan Krkić (19 ans et 85 jours en 2009)",
+      "description": "Passe le cap centenaire sous le maillot blaugrana avec plus d'un an d'avance sur tous ses prédécesseurs."
     }
   ]
 }
