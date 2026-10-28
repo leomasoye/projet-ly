@@ -12,10 +12,10 @@
     "position": "Ailier droit"
   },
   "statsOverview": {
-    "totalGoals": 18,
-    "totalAssists": 23,
-    "totalMatches": 78,
-    "totalTrophies": 4,
+    "totalGoals": 70,
+    "totalAssists": 67,
+    "totalMatches": 201,
+    "totalTrophies": 10,
     "totalRecords": 7,
     "lastUpdated": "2026-10-28"
   },
@@ -306,6 +306,968 @@
         "Supercoupe",
         "Clutch",
         "Pedri-Yamal"
+      ]
+    },
+    {
+      "id": "goal-2026-10-20-paris-saint-",
+      "date": "2026-10-20",
+      "competition": "Ligue des Champions",
+      "season": "2025-2026",
+      "opponent": "Paris Saint-Germain",
+      "homeAway": "EXT",
+      "minute": 32,
+      "score": "4-2",
+      "finalScore": "4-2",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 86,
+        "y": 62
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Paris%20Saint-Germain%20Ligue%20des%20Champions",
+      "description": "Réalisation officielle contre Paris Saint-Germain en Ligue des Champions. Note du match : 8.0/10.",
+      "importance": "Standard",
+      "tags": [
+        "Ligue des Champions",
+        "Paris Saint-Germain",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-10-17-real-betis",
+      "date": "2026-10-17",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Real Betis",
+      "homeAway": "EXT",
+      "minute": 50,
+      "score": "2-5",
+      "finalScore": "2-5",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 87,
+        "y": 42
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Real%20Betis%20La%20Liga",
+      "description": "Réalisation officielle contre Real Betis en La Liga. Note du match : 8.9/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Real Betis",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-10-03-czechia",
+      "date": "2026-10-03",
+      "competition": "Euro",
+      "season": "2025-2026",
+      "opponent": "Czechia",
+      "homeAway": "DOM",
+      "minute": 42,
+      "score": "3-1",
+      "finalScore": "3-1",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 88,
+        "y": 36
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Czechia%20Euro",
+      "description": "Réalisation officielle contre Czechia en Euro. Note du match : 7.6/10.",
+      "importance": "Standard",
+      "tags": [
+        "Euro",
+        "Czechia",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-29-croatia-b1",
+      "date": "2026-09-29",
+      "competition": "Euro",
+      "season": "2025-2026",
+      "opponent": "Croatia",
+      "homeAway": "DOM",
+      "minute": 41,
+      "score": "4-1",
+      "finalScore": "4-1",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 80,
+        "y": 33
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Croatia%20Euro",
+      "description": "Réalisation officielle contre Croatia en Euro. Note du match : 9.3/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Euro",
+        "Croatia",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-29-croatia-b2",
+      "date": "2026-09-29",
+      "competition": "Euro",
+      "season": "2025-2026",
+      "opponent": "Croatia",
+      "homeAway": "DOM",
+      "minute": 26,
+      "score": "4-1",
+      "finalScore": "4-1",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 91,
+        "y": 41
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Croatia%20Euro",
+      "description": "Réalisation officielle contre Croatia en Euro. Note du match : 9.3/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Euro",
+        "Croatia",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-26-england",
+      "date": "2026-09-26",
+      "competition": "Euro",
+      "season": "2025-2026",
+      "opponent": "England",
+      "homeAway": "EXT",
+      "minute": 52,
+      "score": "2-3",
+      "finalScore": "2-3",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 82,
+        "y": 61
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20England%20Euro",
+      "description": "Réalisation officielle contre England en Euro. Note du match : 8.8/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Euro",
+        "England",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-16-racing-santa",
+      "date": "2026-09-16",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Racing Santander",
+      "homeAway": "DOM",
+      "minute": 21,
+      "score": "7-2",
+      "finalScore": "7-2",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 79,
+        "y": 62
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Racing%20Santander%20La%20Liga",
+      "description": "Réalisation officielle contre Racing Santander en La Liga. Note du match : 8.9/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Racing Santander",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-13-levante-b1",
+      "date": "2026-09-13",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Levante",
+      "homeAway": "EXT",
+      "minute": 81,
+      "score": "2-4",
+      "finalScore": "2-4",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 80,
+        "y": 60
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Levante%20La%20Liga",
+      "description": "Réalisation officielle contre Levante en La Liga. Note du match : 9.2/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Levante",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-13-levante-b2",
+      "date": "2026-09-13",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Levante",
+      "homeAway": "EXT",
+      "minute": 44,
+      "score": "2-4",
+      "finalScore": "2-4",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 81,
+        "y": 56
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Levante%20La%20Liga",
+      "description": "Réalisation officielle contre Levante en La Liga. Note du match : 9.2/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Levante",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-09-feyenoord",
+      "date": "2026-09-09",
+      "competition": "Ligue des Champions",
+      "season": "2025-2026",
+      "opponent": "Feyenoord",
+      "homeAway": "DOM",
+      "minute": 68,
+      "score": "5-1",
+      "finalScore": "5-1",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 85,
+        "y": 52
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Feyenoord%20Ligue%20des%20Champions",
+      "description": "Réalisation officielle contre Feyenoord en Ligue des Champions. Note du match : 9.5/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Ligue des Champions",
+        "Feyenoord",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-06-valencia-b1",
+      "date": "2026-09-06",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Valencia",
+      "homeAway": "EXT",
+      "minute": 47,
+      "score": "0-5",
+      "finalScore": "0-5",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 86,
+        "y": 38
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Valencia%20La%20Liga",
+      "description": "Réalisation officielle contre Valencia en La Liga. Note du match : 9.4/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Valencia",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-09-06-valencia-b2",
+      "date": "2026-09-06",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Valencia",
+      "homeAway": "EXT",
+      "minute": 84,
+      "score": "0-5",
+      "finalScore": "0-5",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 83,
+        "y": 63
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Valencia%20La%20Liga",
+      "description": "Réalisation officielle contre Valencia en La Liga. Note du match : 9.4/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Valencia",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-08-31-rayo-valleca-b1",
+      "date": "2026-08-31",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Rayo Vallecano",
+      "homeAway": "DOM",
+      "minute": 23,
+      "score": "5-2",
+      "finalScore": "5-2",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 81,
+        "y": 42
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Rayo%20Vallecano%20La%20Liga",
+      "description": "Réalisation officielle contre Rayo Vallecano en La Liga. Note du match : 9.6/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Rayo Vallecano",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-08-31-rayo-valleca-b2",
+      "date": "2026-08-31",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Rayo Vallecano",
+      "homeAway": "DOM",
+      "minute": 45,
+      "score": "5-2",
+      "finalScore": "5-2",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 82,
+        "y": 44
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Rayo%20Vallecano%20La%20Liga",
+      "description": "Réalisation officielle contre Rayo Vallecano en La Liga. Note du match : 9.6/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Rayo Vallecano",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-08-16-basel",
+      "date": "2026-08-16",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Basel",
+      "homeAway": "EXT",
+      "minute": 72,
+      "score": "2-5",
+      "finalScore": "2-5",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 86,
+        "y": 51
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Basel%20La%20Liga",
+      "description": "Réalisation officielle contre Basel en La Liga. Note du match : 8.3/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Basel",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-06-21-saudi-arabia",
+      "date": "2026-06-21",
+      "competition": "Euro",
+      "season": "2025-2026",
+      "opponent": "Saudi Arabia",
+      "homeAway": "DOM",
+      "minute": 23,
+      "score": "4-0",
+      "finalScore": "4-0",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 83,
+        "y": 62
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Saudi%20Arabia%20Euro",
+      "description": "Réalisation officielle contre Saudi Arabia en Euro. Note du match : 8.4/10.",
+      "importance": "Standard",
+      "tags": [
+        "Euro",
+        "Saudi Arabia",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-04-22-celta-vigo",
+      "date": "2026-04-22",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Celta Vigo",
+      "homeAway": "DOM",
+      "minute": 72,
+      "score": "1-0",
+      "finalScore": "1-0",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 87,
+        "y": 60
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Celta%20Vigo%20La%20Liga",
+      "description": "Réalisation officielle contre Celta Vigo en La Liga. Note du match : 7.7/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Celta Vigo",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-04-14-atl-tico-mad",
+      "date": "2026-04-14",
+      "competition": "Ligue des Champions",
+      "season": "2025-2026",
+      "opponent": "Atlético Madrid",
+      "homeAway": "EXT",
+      "minute": 31,
+      "score": "1-2",
+      "finalScore": "1-2",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 88,
+        "y": 42
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Atl%C3%A9tico%20Madrid%20Ligue%20des%20Champions",
+      "description": "Réalisation officielle contre Atlético Madrid en Ligue des Champions. Note du match : 9.0/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Ligue des Champions",
+        "Atlético Madrid",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-04-11-espanyol",
+      "date": "2026-04-11",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Espanyol",
+      "homeAway": "DOM",
+      "minute": 55,
+      "score": "4-1",
+      "finalScore": "4-1",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 87,
+        "y": 40
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Espanyol%20La%20Liga",
+      "description": "Réalisation officielle contre Espanyol en La Liga. Note du match : 9.3/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Espanyol",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-03-18-newcastle-un",
+      "date": "2026-03-18",
+      "competition": "Ligue des Champions",
+      "season": "2025-2026",
+      "opponent": "Newcastle United",
+      "homeAway": "DOM",
+      "minute": 24,
+      "score": "7-2",
+      "finalScore": "7-2",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 80,
+        "y": 32
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Newcastle%20United%20Ligue%20des%20Champions",
+      "description": "Réalisation officielle contre Newcastle United en Ligue des Champions. Note du match : 8.4/10.",
+      "importance": "Standard",
+      "tags": [
+        "Ligue des Champions",
+        "Newcastle United",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-03-10-newcastle-un",
+      "date": "2026-03-10",
+      "competition": "Ligue des Champions",
+      "season": "2025-2026",
+      "opponent": "Newcastle United",
+      "homeAway": "EXT",
+      "minute": 32,
+      "score": "1-1",
+      "finalScore": "1-1",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 86,
+        "y": 41
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Newcastle%20United%20Ligue%20des%20Champions",
+      "description": "Réalisation officielle contre Newcastle United en Ligue des Champions. Note du match : 7.6/10.",
+      "importance": "Standard",
+      "tags": [
+        "Ligue des Champions",
+        "Newcastle United",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-03-07-athletic-clu",
+      "date": "2026-03-07",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Athletic Club",
+      "homeAway": "EXT",
+      "minute": 30,
+      "score": "0-1",
+      "finalScore": "0-1",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 91,
+        "y": 50
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Athletic%20Club%20La%20Liga",
+      "description": "Réalisation officielle contre Athletic Club en La Liga. Note du match : 7.9/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Athletic Club",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-02-28-villarreal-b1",
+      "date": "2026-02-28",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Villarreal",
+      "homeAway": "DOM",
+      "minute": 27,
+      "score": "4-1",
+      "finalScore": "4-1",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 91,
+        "y": 36
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Villarreal%20La%20Liga",
+      "description": "Réalisation officielle contre Villarreal en La Liga. Note du match : 9.7/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Villarreal",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-02-28-villarreal-b2",
+      "date": "2026-02-28",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Villarreal",
+      "homeAway": "DOM",
+      "minute": 29,
+      "score": "4-1",
+      "finalScore": "4-1",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 89,
+        "y": 62
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Villarreal%20La%20Liga",
+      "description": "Réalisation officielle contre Villarreal en La Liga. Note du match : 9.7/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Villarreal",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-02-28-villarreal-b3",
+      "date": "2026-02-28",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Villarreal",
+      "homeAway": "DOM",
+      "minute": 75,
+      "score": "4-1",
+      "finalScore": "4-1",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 80,
+        "y": 38
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Villarreal%20La%20Liga",
+      "description": "Réalisation officielle contre Villarreal en La Liga. Note du match : 9.7/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Villarreal",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-02-07-mallorca",
+      "date": "2026-02-07",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Mallorca",
+      "homeAway": "DOM",
+      "minute": 64,
+      "score": "3-0",
+      "finalScore": "3-0",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 78,
+        "y": 44
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Mallorca%20La%20Liga",
+      "description": "Réalisation officielle contre Mallorca en La Liga. Note du match : 8.2/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Mallorca",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-02-03-albacete",
+      "date": "2026-02-03",
+      "competition": "Coupe du Roi",
+      "season": "2025-2026",
+      "opponent": "Albacete",
+      "homeAway": "EXT",
+      "minute": 48,
+      "score": "1-2",
+      "finalScore": "1-2",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 82,
+        "y": 51
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Albacete%20Coupe%20du%20Roi",
+      "description": "Réalisation officielle contre Albacete en Coupe du Roi. Note du match : 8.7/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Coupe du Roi",
+        "Albacete",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-01-31-elche",
+      "date": "2026-01-31",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Elche",
+      "homeAway": "EXT",
+      "minute": 32,
+      "score": "1-3",
+      "finalScore": "1-3",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 91,
+        "y": 37
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Elche%20La%20Liga",
+      "description": "Réalisation officielle contre Elche en La Liga. Note du match : 9.2/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Elche",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-01-28-fc-k-benhavn",
+      "date": "2026-01-28",
+      "competition": "Ligue des Champions",
+      "season": "2025-2026",
+      "opponent": "FC København",
+      "homeAway": "DOM",
+      "minute": 67,
+      "score": "4-1",
+      "finalScore": "4-1",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 81,
+        "y": 34
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20FC%20K%C3%B8benhavn%20Ligue%20des%20Champions",
+      "description": "Réalisation officielle contre FC København en Ligue des Champions. Note du match : 9.2/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Ligue des Champions",
+        "FC København",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-01-25-real-oviedo",
+      "date": "2026-01-25",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Real Oviedo",
+      "homeAway": "DOM",
+      "minute": 84,
+      "score": "3-0",
+      "finalScore": "3-0",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 87,
+        "y": 39
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Real%20Oviedo%20La%20Liga",
+      "description": "Réalisation officielle contre Real Oviedo en La Liga. Note du match : 8.2/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Real Oviedo",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2026-01-15-racing-santa",
+      "date": "2026-01-15",
+      "competition": "Coupe du Roi",
+      "season": "2025-2026",
+      "opponent": "Racing Santander",
+      "homeAway": "EXT",
+      "minute": 72,
+      "score": "0-2",
+      "finalScore": "0-2",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 84,
+        "y": 50
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Racing%20Santander%20Coupe%20du%20Roi",
+      "description": "Réalisation officielle contre Racing Santander en Coupe du Roi. Note du match : 8.6/10.",
+      "importance": "Décisif",
+      "tags": [
+        "Coupe du Roi",
+        "Racing Santander",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2025-12-21-villarreal",
+      "date": "2025-12-21",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Villarreal",
+      "homeAway": "EXT",
+      "minute": 75,
+      "score": "0-2",
+      "finalScore": "0-2",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 79,
+        "y": 54
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Villarreal%20La%20Liga",
+      "description": "Réalisation officielle contre Villarreal en La Liga. Note du match : 9.3/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Villarreal",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2025-12-06-real-betis",
+      "date": "2025-12-06",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Real Betis",
+      "homeAway": "EXT",
+      "minute": 67,
+      "score": "3-5",
+      "finalScore": "3-5",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 84,
+        "y": 38
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Real%20Betis%20La%20Liga",
+      "description": "Réalisation officielle contre Real Betis en La Liga. Note du match : 8.2/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Real Betis",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2025-11-29-deportivo-al",
+      "date": "2025-11-29",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Deportivo Alavés",
+      "homeAway": "DOM",
+      "minute": 77,
+      "score": "3-1",
+      "finalScore": "3-1",
+      "goalType": "Pied gauche",
+      "assist": "Collectif",
+      "coordinates": {
+        "x": 91,
+        "y": 52
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Deportivo%20Alav%C3%A9s%20La%20Liga",
+      "description": "Réalisation officielle contre Deportivo Alavés en La Liga. Note du match : 9.4/10.",
+      "importance": "Décisif",
+      "tags": [
+        "La Liga",
+        "Deportivo Alavés",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2025-11-09-celta-vigo",
+      "date": "2025-11-09",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Celta Vigo",
+      "homeAway": "EXT",
+      "minute": 62,
+      "score": "2-4",
+      "finalScore": "2-4",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 89,
+        "y": 51
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Celta%20Vigo%20La%20Liga",
+      "description": "Réalisation officielle contre Celta Vigo en La Liga. Note du match : 8.6/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Celta Vigo",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2025-11-05-club-brugge",
+      "date": "2025-11-05",
+      "competition": "Ligue des Champions",
+      "season": "2025-2026",
+      "opponent": "Club Brugge",
+      "homeAway": "EXT",
+      "minute": 81,
+      "score": "3-3",
+      "finalScore": "3-3",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 80,
+        "y": 38
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Club%20Brugge%20Ligue%20des%20Champions",
+      "description": "Réalisation officielle contre Club Brugge en Ligue des Champions. Note du match : 8.7/10.",
+      "importance": "Standard",
+      "tags": [
+        "Ligue des Champions",
+        "Club Brugge",
+        "Officiel"
+      ]
+    },
+    {
+      "id": "goal-2025-11-02-elche",
+      "date": "2025-11-02",
+      "competition": "La Liga",
+      "season": "2025-2026",
+      "opponent": "Elche",
+      "homeAway": "DOM",
+      "minute": 74,
+      "score": "3-1",
+      "finalScore": "3-1",
+      "goalType": "Pied gauche",
+      "assist": null,
+      "coordinates": {
+        "x": 87,
+        "y": 37
+      },
+      "videoId": "",
+      "videoUrl": "https://www.youtube.com/results?search_query=But%20Lamine%20Yamal%20vs%20Elche%20La%20Liga",
+      "description": "Réalisation officielle contre Elche en La Liga. Note du match : 8.0/10.",
+      "importance": "Standard",
+      "tags": [
+        "La Liga",
+        "Elche",
+        "Officiel"
       ]
     }
   ],

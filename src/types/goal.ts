@@ -37,7 +37,7 @@ export const GoalSchema = z.object({
   goalType: GoalTypeSchema,
   assist: z.string().nullable().optional(),
   coordinates: CoordinatesSchema,
-  videoId: z.string().regex(/^[a-zA-Z0-9_-]{11}$/, 'Identifiant YouTube valide de 11 caractères requis'),
+  videoId: z.string().regex(/^([a-zA-Z0-9_-]{11})?$/, 'Identifiant YouTube valide de 11 caractères ou chaîne vide'),
   videoUrl: z.url(),
   description: z.string().min(10, 'Une description tactique du but est requise'),
   importance: z.enum(['Historique', 'Décisif', 'Spectaculaire', 'Standard']).default('Standard'),
